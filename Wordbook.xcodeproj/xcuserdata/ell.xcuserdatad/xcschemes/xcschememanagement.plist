@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ComplicationExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>WBLib.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Wordbook.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>WordbookAW Watch App.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>WordbookWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>493937CF2ABC93A900412D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>493938042ABC949600412D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>493938262ABC969700412D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>493938352ABC969800412D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4939383F2ABC969800412D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>493938582ABC973C00412D55</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

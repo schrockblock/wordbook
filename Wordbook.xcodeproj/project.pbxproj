@@ -1,0 +1,1550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		492220CA2B0BFDDD00A70214 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220C92B0BFDDD00A70214 /* SplashView.swift */; };
+		492220CC2B0BFDFC00A70214 /* SplashReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220CB2B0BFDFC00A70214 /* SplashReducer.swift */; };
+		492220CE2B0BFE0800A70214 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220CD2B0BFE0800A70214 /* LoginView.swift */; };
+		492220D02B0BFE1400A70214 /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220CF2B0BFE1400A70214 /* LoginReducer.swift */; };
+		4932A1AF2AE1BF220049760C /* EditPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A1AE2AE1BF220049760C /* EditPhraseView.swift */; };
+		4932A1B12AE1BF370049760C /* EditPhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */; };
+		493937D42ABC93A900412D55 /* WordbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937D32ABC93A900412D55 /* WordbookApp.swift */; };
+		493937D82ABC93AA00412D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493937D72ABC93AA00412D55 /* Assets.xcassets */; };
+		493937DB2ABC93AA00412D55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493937DA2ABC93AA00412D55 /* Preview Assets.xcassets */; };
+		493937E52ABC93AA00412D55 /* WordbookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937E42ABC93AA00412D55 /* WordbookTests.swift */; };
+		493937EF2ABC93AA00412D55 /* WordbookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937EE2ABC93AA00412D55 /* WordbookUITests.swift */; };
+		493937F12ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937F02ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift */; };
+		493937FF2ABC940900412D55 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 493937FE2ABC940900412D55 /* ComposableArchitecture */; };
+		4939385C2ABC973C00412D55 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939385B2ABC973C00412D55 /* WidgetKit.framework */; };
+		4939385E2ABC973C00412D55 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939385D2ABC973C00412D55 /* SwiftUI.framework */; };
+		493938612ABC973C00412D55 /* WordbookWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938602ABC973C00412D55 /* WordbookWidgetBundle.swift */; };
+		493938632ABC973C00412D55 /* WordbookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938622ABC973C00412D55 /* WordbookWidget.swift */; };
+		493938652ABC973D00412D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493938642ABC973D00412D55 /* Assets.xcassets */; };
+		493938692ABC973D00412D55 /* WordbookWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 493938592ABC973C00412D55 /* WordbookWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4977ED292ABCEC550058C471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4977ED282ABCEC550058C471 /* Assets.xcassets */; };
+		4977ED2C2ABCEC550058C471 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4977ED2B2ABCEC550058C471 /* Preview Assets.xcassets */; };
+		4977ED362ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED352ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift */; };
+		4977ED402ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED3F2ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift */; };
+		4977ED422ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED412ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift */; };
+		4977ED452ABCEC570058C471 /* WordbookAW Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4977ED502ABCEC7B0058C471 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED4F2ABCEC7B0058C471 /* ComposableArchitecture */; };
+		4977ED612ABD08E50058C471 /* SpeechClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490442612ABCC2B8009A54E7 /* SpeechClient.swift */; };
+		4977ED622ABD08E50058C471 /* AddPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939387A2ABCA18800412D55 /* AddPhraseView.swift */; };
+		4977ED632ABD08E50058C471 /* PhrasesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938782ABCA06C00412D55 /* PhrasesReducer.swift */; };
+		4977ED642ABD08E50058C471 /* AddPhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939387C2ABCA19500412D55 /* AddPhraseReducer.swift */; };
+		4977ED652ABD08E50058C471 /* PhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938762ABCA03800412D55 /* PhrasesView.swift */; };
+		4977ED662ABD0BAB0058C471 /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938742ABC9F1C00412D55 /* Phrase.swift */; };
+		4977ED672ABD0BAB0058C471 /* PhraseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938722ABC9E8700412D55 /* PhraseListView.swift */; };
+		4977ED682ABD0BAB0058C471 /* PhraseListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938702ABC9E7200412D55 /* PhraseListReducer.swift */; };
+		4977ED692ABD0BB30058C471 /* PhraseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938722ABC9E8700412D55 /* PhraseListView.swift */; };
+		4977ED6A2ABD0BB30058C471 /* PhraseListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938702ABC9E7200412D55 /* PhraseListReducer.swift */; };
+		4977ED6B2ABD0BB30058C471 /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938742ABC9F1C00412D55 /* Phrase.swift */; };
+		4977ED6D2ABD0C5F0058C471 /* WordbookWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED6C2ABD0C5F0058C471 /* WordbookWatchApp.swift */; };
+		4977ED6F2ABD0CBD0058C471 /* PhrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED6E2ABD0CBD0058C471 /* PhrasesView.swift */; };
+		4977ED712ABD0CD60058C471 /* PhrasesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED702ABD0CD60058C471 /* PhrasesReducer.swift */; };
+		4977ED732ABD0D1B0058C471 /* AddPhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED722ABD0D1B0058C471 /* AddPhraseReducer.swift */; };
+		4977ED752ABD0D2C0058C471 /* AddPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED742ABD0D2C0058C471 /* AddPhraseView.swift */; };
+		4977ED772ABD10050058C471 /* CasePaths in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED762ABD10050058C471 /* CasePaths */; };
+		4977ED792ABD10050058C471 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED782ABD10050058C471 /* Dependencies */; };
+		4977ED7B2ABD10050058C471 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED7A2ABD10050058C471 /* SwiftUINavigation */; };
+		4977ED7D2ABD10050058C471 /* SwiftUINavigationCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED7C2ABD10050058C471 /* SwiftUINavigationCore */; };
+		4977ED7F2ABD13810058C471 /* SpecificLanguageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED7E2ABD13810058C471 /* SpecificLanguageTextField.swift */; };
+		4977ED812ABD1FC50058C471 /* WatchConnectivityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */; };
+		4977ED822ABD269A0058C471 /* WatchConnectivityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */; };
+		4977ED892ABD396D0058C471 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939385B2ABC973C00412D55 /* WidgetKit.framework */; };
+		4977ED8A2ABD396D0058C471 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939385D2ABC973C00412D55 /* SwiftUI.framework */; };
+		4977ED8D2ABD396D0058C471 /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED8C2ABD396D0058C471 /* Complication.swift */; };
+		4977ED8F2ABD396E0058C471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4977ED8E2ABD396E0058C471 /* Assets.xcassets */; };
+		4977ED932ABD396E0058C471 /* ComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4977ED882ABD396D0058C471 /* ComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		493937E12ABC93AA00412D55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 493937CF2ABC93A900412D55;
+			remoteInfo = Wordbook;
+		};
+		493937EB2ABC93AA00412D55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 493937CF2ABC93A900412D55;
+			remoteInfo = Wordbook;
+		};
+		493938672ABC973D00412D55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 493938582ABC973C00412D55;
+			remoteInfo = WordbookWidgetExtension;
+		};
+		4977ED322ABCEC560058C471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4977ED212ABCEC540058C471;
+			remoteInfo = "WordbookAW Watch App";
+		};
+		4977ED3C2ABCEC570058C471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4977ED212ABCEC540058C471;
+			remoteInfo = "WordbookAW Watch App";
+		};
+		4977ED432ABCEC570058C471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4977ED212ABCEC540058C471;
+			remoteInfo = "WordbookAW Watch App";
+		};
+		4977ED912ABD396E0058C471 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 493937C82ABC93A900412D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4977ED872ABD396D0058C471;
+			remoteInfo = ComplicationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4939381F2ABC949600412D55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4939384E2ABC969800412D55 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4977ED452ABCEC570058C471 /* WordbookAW Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4939386D2ABC973D00412D55 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				493938692ABC973D00412D55 /* WordbookWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED5D2ABCEC7B0058C471 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED972ABD396E0058C471 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4977ED932ABD396E0058C471 /* ComplicationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		490442612ABCC2B8009A54E7 /* SpeechClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechClient.swift; sourceTree = "<group>"; };
+		492220C92B0BFDDD00A70214 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		492220CB2B0BFDFC00A70214 /* SplashReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashReducer.swift; sourceTree = "<group>"; };
+		492220CD2B0BFE0800A70214 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		492220CF2B0BFE1400A70214 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
+		4932A1AE2AE1BF220049760C /* EditPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseView.swift; sourceTree = "<group>"; };
+		4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseReducer.swift; sourceTree = "<group>"; };
+		493937D02ABC93A900412D55 /* Wordbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		493937D32ABC93A900412D55 /* WordbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookApp.swift; sourceTree = "<group>"; };
+		493937D72ABC93AA00412D55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		493937DA2ABC93AA00412D55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		493937E02ABC93AA00412D55 /* WordbookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordbookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		493937E42ABC93AA00412D55 /* WordbookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookTests.swift; sourceTree = "<group>"; };
+		493937EA2ABC93AA00412D55 /* WordbookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordbookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		493937EE2ABC93AA00412D55 /* WordbookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookUITests.swift; sourceTree = "<group>"; };
+		493937F02ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		493938592ABC973C00412D55 /* WordbookWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WordbookWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4939385B2ABC973C00412D55 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4939385D2ABC973C00412D55 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		493938602ABC973C00412D55 /* WordbookWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookWidgetBundle.swift; sourceTree = "<group>"; };
+		493938622ABC973C00412D55 /* WordbookWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookWidget.swift; sourceTree = "<group>"; };
+		493938642ABC973D00412D55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		493938662ABC973D00412D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493938702ABC9E7200412D55 /* PhraseListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListReducer.swift; sourceTree = "<group>"; };
+		493938722ABC9E8700412D55 /* PhraseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseListView.swift; sourceTree = "<group>"; };
+		493938742ABC9F1C00412D55 /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
+		493938762ABCA03800412D55 /* PhrasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesView.swift; sourceTree = "<group>"; };
+		493938782ABCA06C00412D55 /* PhrasesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesReducer.swift; sourceTree = "<group>"; };
+		4939387A2ABCA18800412D55 /* AddPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhraseView.swift; sourceTree = "<group>"; };
+		4939387C2ABCA19500412D55 /* AddPhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhraseReducer.swift; sourceTree = "<group>"; };
+		4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WordbookAW Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4977ED282ABCEC550058C471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4977ED2B2ABCEC550058C471 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4977ED312ABCEC550058C471 /* WordbookAW Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WordbookAW Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4977ED352ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookAW_Watch_AppTests.swift; sourceTree = "<group>"; };
+		4977ED3B2ABCEC560058C471 /* WordbookAW Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WordbookAW Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4977ED3F2ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookAW_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		4977ED412ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookAW_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4977ED6C2ABD0C5F0058C471 /* WordbookWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookWatchApp.swift; sourceTree = "<group>"; };
+		4977ED6E2ABD0CBD0058C471 /* PhrasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesView.swift; sourceTree = "<group>"; };
+		4977ED702ABD0CD60058C471 /* PhrasesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesReducer.swift; sourceTree = "<group>"; };
+		4977ED722ABD0D1B0058C471 /* AddPhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhraseReducer.swift; sourceTree = "<group>"; };
+		4977ED742ABD0D2C0058C471 /* AddPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhraseView.swift; sourceTree = "<group>"; };
+		4977ED7E2ABD13810058C471 /* SpecificLanguageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificLanguageTextField.swift; sourceTree = "<group>"; };
+		4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityClient.swift; sourceTree = "<group>"; };
+		4977ED832ABD32A90058C471 /* WordbookAW-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WordbookAW-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4977ED882ABD396D0058C471 /* ComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4977ED8C2ABD396D0058C471 /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
+		4977ED8E2ABD396E0058C471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4977ED902ABD396E0058C471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		493937CD2ABC93A900412D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493937FF2ABC940900412D55 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493937DD2ABC93AA00412D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493937E72ABC93AA00412D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493938562ABC973C00412D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4939385E2ABC973C00412D55 /* SwiftUI.framework in Frameworks */,
+				4939385C2ABC973C00412D55 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED1F2ABCEC540058C471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED7B2ABD10050058C471 /* SwiftUINavigation in Frameworks */,
+				4977ED792ABD10050058C471 /* Dependencies in Frameworks */,
+				4977ED7D2ABD10050058C471 /* SwiftUINavigationCore in Frameworks */,
+				4977ED502ABCEC7B0058C471 /* ComposableArchitecture in Frameworks */,
+				4977ED772ABD10050058C471 /* CasePaths in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED2E2ABCEC550058C471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED382ABCEC560058C471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED852ABD396D0058C471 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED8A2ABD396D0058C471 /* SwiftUI.framework in Frameworks */,
+				4977ED892ABD396D0058C471 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		493937C72ABC93A900412D55 = {
+			isa = PBXGroup;
+			children = (
+				493937D22ABC93A900412D55 /* Wordbook */,
+				493937E32ABC93AA00412D55 /* WordbookTests */,
+				493937ED2ABC93AA00412D55 /* WordbookUITests */,
+				4939385F2ABC973C00412D55 /* WordbookWidget */,
+				4977ED232ABCEC550058C471 /* WordbookAW Watch App */,
+				4977ED342ABCEC560058C471 /* WordbookAW Watch AppTests */,
+				4977ED3E2ABCEC570058C471 /* WordbookAW Watch AppUITests */,
+				4977ED8B2ABD396D0058C471 /* Complication */,
+				4939385A2ABC973C00412D55 /* Frameworks */,
+				493937D12ABC93A900412D55 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		493937D12ABC93A900412D55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				493937D02ABC93A900412D55 /* Wordbook.app */,
+				493937E02ABC93AA00412D55 /* WordbookTests.xctest */,
+				493937EA2ABC93AA00412D55 /* WordbookUITests.xctest */,
+				493938592ABC973C00412D55 /* WordbookWidgetExtension.appex */,
+				4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */,
+				4977ED312ABCEC550058C471 /* WordbookAW Watch AppTests.xctest */,
+				4977ED3B2ABCEC560058C471 /* WordbookAW Watch AppUITests.xctest */,
+				4977ED882ABD396D0058C471 /* ComplicationExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		493937D22ABC93A900412D55 /* Wordbook */ = {
+			isa = PBXGroup;
+			children = (
+				493937D32ABC93A900412D55 /* WordbookApp.swift */,
+				492220C92B0BFDDD00A70214 /* SplashView.swift */,
+				492220CB2B0BFDFC00A70214 /* SplashReducer.swift */,
+				492220CD2B0BFE0800A70214 /* LoginView.swift */,
+				492220CF2B0BFE1400A70214 /* LoginReducer.swift */,
+				493938762ABCA03800412D55 /* PhrasesView.swift */,
+				493938782ABCA06C00412D55 /* PhrasesReducer.swift */,
+				4939387A2ABCA18800412D55 /* AddPhraseView.swift */,
+				4939387C2ABCA19500412D55 /* AddPhraseReducer.swift */,
+				4932A1AE2AE1BF220049760C /* EditPhraseView.swift */,
+				4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */,
+				490442612ABCC2B8009A54E7 /* SpeechClient.swift */,
+				4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */,
+				493938722ABC9E8700412D55 /* PhraseListView.swift */,
+				493938702ABC9E7200412D55 /* PhraseListReducer.swift */,
+				493938742ABC9F1C00412D55 /* Phrase.swift */,
+				493937D72ABC93AA00412D55 /* Assets.xcassets */,
+				493937D92ABC93AA00412D55 /* Preview Content */,
+			);
+			path = Wordbook;
+			sourceTree = "<group>";
+		};
+		493937D92ABC93AA00412D55 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				493937DA2ABC93AA00412D55 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		493937E32ABC93AA00412D55 /* WordbookTests */ = {
+			isa = PBXGroup;
+			children = (
+				493937E42ABC93AA00412D55 /* WordbookTests.swift */,
+			);
+			path = WordbookTests;
+			sourceTree = "<group>";
+		};
+		493937ED2ABC93AA00412D55 /* WordbookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				493937EE2ABC93AA00412D55 /* WordbookUITests.swift */,
+				493937F02ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift */,
+			);
+			path = WordbookUITests;
+			sourceTree = "<group>";
+		};
+		4939385A2ABC973C00412D55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4939385B2ABC973C00412D55 /* WidgetKit.framework */,
+				4939385D2ABC973C00412D55 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4939385F2ABC973C00412D55 /* WordbookWidget */ = {
+			isa = PBXGroup;
+			children = (
+				493938602ABC973C00412D55 /* WordbookWidgetBundle.swift */,
+				493938622ABC973C00412D55 /* WordbookWidget.swift */,
+				493938642ABC973D00412D55 /* Assets.xcassets */,
+				493938662ABC973D00412D55 /* Info.plist */,
+			);
+			path = WordbookWidget;
+			sourceTree = "<group>";
+		};
+		4977ED232ABCEC550058C471 /* WordbookAW Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				4977ED832ABD32A90058C471 /* WordbookAW-Watch-App-Info.plist */,
+				4977ED6C2ABD0C5F0058C471 /* WordbookWatchApp.swift */,
+				4977ED6E2ABD0CBD0058C471 /* PhrasesView.swift */,
+				4977ED702ABD0CD60058C471 /* PhrasesReducer.swift */,
+				4977ED742ABD0D2C0058C471 /* AddPhraseView.swift */,
+				4977ED722ABD0D1B0058C471 /* AddPhraseReducer.swift */,
+				4977ED282ABCEC550058C471 /* Assets.xcassets */,
+				4977ED2A2ABCEC550058C471 /* Preview Content */,
+				4977ED7E2ABD13810058C471 /* SpecificLanguageTextField.swift */,
+			);
+			path = "WordbookAW Watch App";
+			sourceTree = "<group>";
+		};
+		4977ED2A2ABCEC550058C471 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4977ED2B2ABCEC550058C471 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4977ED342ABCEC560058C471 /* WordbookAW Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4977ED352ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift */,
+			);
+			path = "WordbookAW Watch AppTests";
+			sourceTree = "<group>";
+		};
+		4977ED3E2ABCEC570058C471 /* WordbookAW Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4977ED3F2ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift */,
+				4977ED412ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "WordbookAW Watch AppUITests";
+			sourceTree = "<group>";
+		};
+		4977ED8B2ABD396D0058C471 /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				4977ED8C2ABD396D0058C471 /* Complication.swift */,
+				4977ED8E2ABD396E0058C471 /* Assets.xcassets */,
+				4977ED902ABD396E0058C471 /* Info.plist */,
+			);
+			path = Complication;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		493937CF2ABC93A900412D55 /* Wordbook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 493937F42ABC93AA00412D55 /* Build configuration list for PBXNativeTarget "Wordbook" */;
+			buildPhases = (
+				493937CC2ABC93A900412D55 /* Sources */,
+				493937CD2ABC93A900412D55 /* Frameworks */,
+				493937CE2ABC93A900412D55 /* Resources */,
+				4939381F2ABC949600412D55 /* Embed Frameworks */,
+				4939384E2ABC969800412D55 /* Embed Watch Content */,
+				4939386D2ABC973D00412D55 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				493938682ABC973D00412D55 /* PBXTargetDependency */,
+				4977ED442ABCEC570058C471 /* PBXTargetDependency */,
+			);
+			name = Wordbook;
+			packageProductDependencies = (
+				493937FE2ABC940900412D55 /* ComposableArchitecture */,
+			);
+			productName = Wordbook;
+			productReference = 493937D02ABC93A900412D55 /* Wordbook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		493937DF2ABC93AA00412D55 /* WordbookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 493937F72ABC93AA00412D55 /* Build configuration list for PBXNativeTarget "WordbookTests" */;
+			buildPhases = (
+				493937DC2ABC93AA00412D55 /* Sources */,
+				493937DD2ABC93AA00412D55 /* Frameworks */,
+				493937DE2ABC93AA00412D55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				493937E22ABC93AA00412D55 /* PBXTargetDependency */,
+			);
+			name = WordbookTests;
+			productName = WordbookTests;
+			productReference = 493937E02ABC93AA00412D55 /* WordbookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		493937E92ABC93AA00412D55 /* WordbookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 493937FA2ABC93AA00412D55 /* Build configuration list for PBXNativeTarget "WordbookUITests" */;
+			buildPhases = (
+				493937E62ABC93AA00412D55 /* Sources */,
+				493937E72ABC93AA00412D55 /* Frameworks */,
+				493937E82ABC93AA00412D55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				493937EC2ABC93AA00412D55 /* PBXTargetDependency */,
+			);
+			name = WordbookUITests;
+			productName = WordbookUITests;
+			productReference = 493937EA2ABC93AA00412D55 /* WordbookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		493938582ABC973C00412D55 /* WordbookWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4939386A2ABC973D00412D55 /* Build configuration list for PBXNativeTarget "WordbookWidgetExtension" */;
+			buildPhases = (
+				493938552ABC973C00412D55 /* Sources */,
+				493938562ABC973C00412D55 /* Frameworks */,
+				493938572ABC973C00412D55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordbookWidgetExtension;
+			productName = WordbookWidgetExtension;
+			productReference = 493938592ABC973C00412D55 /* WordbookWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4977ED212ABCEC540058C471 /* WordbookAW Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4977ED462ABCEC570058C471 /* Build configuration list for PBXNativeTarget "WordbookAW Watch App" */;
+			buildPhases = (
+				4977ED1E2ABCEC540058C471 /* Sources */,
+				4977ED1F2ABCEC540058C471 /* Frameworks */,
+				4977ED202ABCEC540058C471 /* Resources */,
+				4977ED5D2ABCEC7B0058C471 /* Embed Frameworks */,
+				4977ED972ABD396E0058C471 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4977ED922ABD396E0058C471 /* PBXTargetDependency */,
+			);
+			name = "WordbookAW Watch App";
+			packageProductDependencies = (
+				4977ED4F2ABCEC7B0058C471 /* ComposableArchitecture */,
+				4977ED762ABD10050058C471 /* CasePaths */,
+				4977ED782ABD10050058C471 /* Dependencies */,
+				4977ED7A2ABD10050058C471 /* SwiftUINavigation */,
+				4977ED7C2ABD10050058C471 /* SwiftUINavigationCore */,
+			);
+			productName = "WordbookAW Watch App";
+			productReference = 4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4977ED302ABCEC550058C471 /* WordbookAW Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4977ED492ABCEC570058C471 /* Build configuration list for PBXNativeTarget "WordbookAW Watch AppTests" */;
+			buildPhases = (
+				4977ED2D2ABCEC550058C471 /* Sources */,
+				4977ED2E2ABCEC550058C471 /* Frameworks */,
+				4977ED2F2ABCEC550058C471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4977ED332ABCEC560058C471 /* PBXTargetDependency */,
+			);
+			name = "WordbookAW Watch AppTests";
+			productName = "WordbookAW Watch AppTests";
+			productReference = 4977ED312ABCEC550058C471 /* WordbookAW Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4977ED3A2ABCEC560058C471 /* WordbookAW Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4977ED4C2ABCEC570058C471 /* Build configuration list for PBXNativeTarget "WordbookAW Watch AppUITests" */;
+			buildPhases = (
+				4977ED372ABCEC560058C471 /* Sources */,
+				4977ED382ABCEC560058C471 /* Frameworks */,
+				4977ED392ABCEC560058C471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4977ED3D2ABCEC570058C471 /* PBXTargetDependency */,
+			);
+			name = "WordbookAW Watch AppUITests";
+			productName = "WordbookAW Watch AppUITests";
+			productReference = 4977ED3B2ABCEC560058C471 /* WordbookAW Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		4977ED872ABD396D0058C471 /* ComplicationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4977ED942ABD396E0058C471 /* Build configuration list for PBXNativeTarget "ComplicationExtension" */;
+			buildPhases = (
+				4977ED842ABD396D0058C471 /* Sources */,
+				4977ED852ABD396D0058C471 /* Frameworks */,
+				4977ED862ABD396D0058C471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComplicationExtension;
+			productName = ComplicationExtension;
+			productReference = 4977ED882ABD396D0058C471 /* ComplicationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		493937C82ABC93A900412D55 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					493937CF2ABC93A900412D55 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					493937DF2ABC93AA00412D55 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 493937CF2ABC93A900412D55;
+					};
+					493937E92ABC93AA00412D55 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 493937CF2ABC93A900412D55;
+					};
+					493938582ABC973C00412D55 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					4977ED212ABCEC540058C471 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					4977ED302ABCEC550058C471 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4977ED212ABCEC540058C471;
+					};
+					4977ED3A2ABCEC560058C471 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 4977ED212ABCEC540058C471;
+					};
+					4977ED872ABD396D0058C471 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 493937CB2ABC93A900412D55 /* Build configuration list for PBXProject "Wordbook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 493937C72ABC93A900412D55;
+			packageReferences = (
+				493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				4904425E2ABCB997009A54E7 /* XCRemoteSwiftPackageReference "swift-case-paths" */,
+				490442632ABCC8F0009A54E7 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+				490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
+			productRefGroup = 493937D12ABC93A900412D55 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				493937CF2ABC93A900412D55 /* Wordbook */,
+				493937DF2ABC93AA00412D55 /* WordbookTests */,
+				493937E92ABC93AA00412D55 /* WordbookUITests */,
+				493938582ABC973C00412D55 /* WordbookWidgetExtension */,
+				4977ED212ABCEC540058C471 /* WordbookAW Watch App */,
+				4977ED302ABCEC550058C471 /* WordbookAW Watch AppTests */,
+				4977ED3A2ABCEC560058C471 /* WordbookAW Watch AppUITests */,
+				4977ED872ABD396D0058C471 /* ComplicationExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		493937CE2ABC93A900412D55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493937DB2ABC93AA00412D55 /* Preview Assets.xcassets in Resources */,
+				493937D82ABC93AA00412D55 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493937DE2ABC93AA00412D55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493937E82ABC93AA00412D55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493938572ABC973C00412D55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493938652ABC973D00412D55 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED202ABCEC540058C471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED2C2ABCEC550058C471 /* Preview Assets.xcassets in Resources */,
+				4977ED292ABCEC550058C471 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED2F2ABCEC550058C471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED392ABCEC560058C471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED862ABD396D0058C471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED8F2ABD396E0058C471 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		493937CC2ABC93A900412D55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				492220D02B0BFE1400A70214 /* LoginReducer.swift in Sources */,
+				4977ED642ABD08E50058C471 /* AddPhraseReducer.swift in Sources */,
+				4932A1B12AE1BF370049760C /* EditPhraseReducer.swift in Sources */,
+				4977ED672ABD0BAB0058C471 /* PhraseListView.swift in Sources */,
+				492220CE2B0BFE0800A70214 /* LoginView.swift in Sources */,
+				4977ED612ABD08E50058C471 /* SpeechClient.swift in Sources */,
+				493937D42ABC93A900412D55 /* WordbookApp.swift in Sources */,
+				4977ED682ABD0BAB0058C471 /* PhraseListReducer.swift in Sources */,
+				4932A1AF2AE1BF220049760C /* EditPhraseView.swift in Sources */,
+				4977ED622ABD08E50058C471 /* AddPhraseView.swift in Sources */,
+				492220CA2B0BFDDD00A70214 /* SplashView.swift in Sources */,
+				4977ED632ABD08E50058C471 /* PhrasesReducer.swift in Sources */,
+				4977ED812ABD1FC50058C471 /* WatchConnectivityClient.swift in Sources */,
+				4977ED652ABD08E50058C471 /* PhrasesView.swift in Sources */,
+				4977ED662ABD0BAB0058C471 /* Phrase.swift in Sources */,
+				492220CC2B0BFDFC00A70214 /* SplashReducer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493937DC2ABC93AA00412D55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493937E52ABC93AA00412D55 /* WordbookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493937E62ABC93AA00412D55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493937F12ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift in Sources */,
+				493937EF2ABC93AA00412D55 /* WordbookUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		493938552ABC973C00412D55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				493938632ABC973C00412D55 /* WordbookWidget.swift in Sources */,
+				493938612ABC973C00412D55 /* WordbookWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED1E2ABCEC540058C471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED6D2ABD0C5F0058C471 /* WordbookWatchApp.swift in Sources */,
+				4977ED6A2ABD0BB30058C471 /* PhraseListReducer.swift in Sources */,
+				4977ED6B2ABD0BB30058C471 /* Phrase.swift in Sources */,
+				4977ED692ABD0BB30058C471 /* PhraseListView.swift in Sources */,
+				4977ED732ABD0D1B0058C471 /* AddPhraseReducer.swift in Sources */,
+				4977ED752ABD0D2C0058C471 /* AddPhraseView.swift in Sources */,
+				4977ED7F2ABD13810058C471 /* SpecificLanguageTextField.swift in Sources */,
+				4977ED822ABD269A0058C471 /* WatchConnectivityClient.swift in Sources */,
+				4977ED6F2ABD0CBD0058C471 /* PhrasesView.swift in Sources */,
+				4977ED712ABD0CD60058C471 /* PhrasesReducer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED2D2ABCEC550058C471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED362ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED372ABCEC560058C471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED402ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift in Sources */,
+				4977ED422ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4977ED842ABD396D0058C471 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4977ED8D2ABD396D0058C471 /* Complication.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		493937E22ABC93AA00412D55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 493937CF2ABC93A900412D55 /* Wordbook */;
+			targetProxy = 493937E12ABC93AA00412D55 /* PBXContainerItemProxy */;
+		};
+		493937EC2ABC93AA00412D55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 493937CF2ABC93A900412D55 /* Wordbook */;
+			targetProxy = 493937EB2ABC93AA00412D55 /* PBXContainerItemProxy */;
+		};
+		493938682ABC973D00412D55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 493938582ABC973C00412D55 /* WordbookWidgetExtension */;
+			targetProxy = 493938672ABC973D00412D55 /* PBXContainerItemProxy */;
+		};
+		4977ED332ABCEC560058C471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4977ED212ABCEC540058C471 /* WordbookAW Watch App */;
+			targetProxy = 4977ED322ABCEC560058C471 /* PBXContainerItemProxy */;
+		};
+		4977ED3D2ABCEC570058C471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4977ED212ABCEC540058C471 /* WordbookAW Watch App */;
+			targetProxy = 4977ED3C2ABCEC570058C471 /* PBXContainerItemProxy */;
+		};
+		4977ED442ABCEC570058C471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4977ED212ABCEC540058C471 /* WordbookAW Watch App */;
+			targetProxy = 4977ED432ABCEC570058C471 /* PBXContainerItemProxy */;
+		};
+		4977ED922ABD396E0058C471 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4977ED872ABD396D0058C471 /* ComplicationExtension */;
+			targetProxy = 4977ED912ABD396E0058C471 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		493937F22ABC93AA00412D55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		493937F32ABC93AA00412D55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		493937F52ABC93AA00412D55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wordbook/Preview Content\"";
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To allow transcription";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "To transcribe your words";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		493937F62ABC93AA00412D55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Wordbook/Preview Content\"";
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To allow transcription";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "To transcribe your words";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		493937F82ABC93AA00412D55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.WordbookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordbook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wordbook";
+			};
+			name = Debug;
+		};
+		493937F92ABC93AA00412D55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.WordbookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordbook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Wordbook";
+			};
+			name = Release;
+		};
+		493937FB2ABC93AA00412D55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.WordbookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wordbook;
+			};
+			name = Debug;
+		};
+		493937FC2ABC93AA00412D55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.WordbookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wordbook;
+			};
+			name = Release;
+		};
+		4939386B2ABC973D00412D55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordbookWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WordbookWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook.WordbookWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4939386C2ABC973D00412D55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WordbookWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WordbookWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook.WordbookWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4977ED472ABCEC570058C471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WordbookAW Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WordbookAW-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = WordbookAW;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = co.lithobyte.Wordbook;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		4977ED482ABCEC570058C471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WordbookAW Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WordbookAW-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = WordbookAW;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = co.lithobyte.Wordbook;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		4977ED4A2ABCEC570058C471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.lithobyte.WordbookAW-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordbookAW Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WordbookAW Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		4977ED4B2ABCEC570058C471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.lithobyte.WordbookAW-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordbookAW Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WordbookAW Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		4977ED4D2ABCEC570058C471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.lithobyte.WordbookAW-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "WordbookAW Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		4977ED4E2ABCEC570058C471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.lithobyte.WordbookAW-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "WordbookAW Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
+		4977ED952ABD396E0058C471 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Complication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Complication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook.watchkitapp.Complication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		4977ED962ABD396E0058C471 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HK6WSAR793;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Complication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Complication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.lithobyte.Wordbook.watchkitapp.Complication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		493937CB2ABC93A900412D55 /* Build configuration list for PBXProject "Wordbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493937F22ABC93AA00412D55 /* Debug */,
+				493937F32ABC93AA00412D55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		493937F42ABC93AA00412D55 /* Build configuration list for PBXNativeTarget "Wordbook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493937F52ABC93AA00412D55 /* Debug */,
+				493937F62ABC93AA00412D55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		493937F72ABC93AA00412D55 /* Build configuration list for PBXNativeTarget "WordbookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493937F82ABC93AA00412D55 /* Debug */,
+				493937F92ABC93AA00412D55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		493937FA2ABC93AA00412D55 /* Build configuration list for PBXNativeTarget "WordbookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493937FB2ABC93AA00412D55 /* Debug */,
+				493937FC2ABC93AA00412D55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4939386A2ABC973D00412D55 /* Build configuration list for PBXNativeTarget "WordbookWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4939386B2ABC973D00412D55 /* Debug */,
+				4939386C2ABC973D00412D55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4977ED462ABCEC570058C471 /* Build configuration list for PBXNativeTarget "WordbookAW Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4977ED472ABCEC570058C471 /* Debug */,
+				4977ED482ABCEC570058C471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4977ED492ABCEC570058C471 /* Build configuration list for PBXNativeTarget "WordbookAW Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4977ED4A2ABCEC570058C471 /* Debug */,
+				4977ED4B2ABCEC570058C471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4977ED4C2ABCEC570058C471 /* Build configuration list for PBXNativeTarget "WordbookAW Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4977ED4D2ABCEC570058C471 /* Debug */,
+				4977ED4E2ABCEC570058C471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4977ED942ABD396E0058C471 /* Build configuration list for PBXNativeTarget "ComplicationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4977ED952ABD396E0058C471 /* Debug */,
+				4977ED962ABD396E0058C471 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4904425E2ABCB997009A54E7 /* XCRemoteSwiftPackageReference "swift-case-paths" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-case-paths";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		490442632ABCC8F0009A54E7 /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		493937FE2ABC940900412D55 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		4977ED4F2ABCEC7B0058C471 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		4977ED762ABD10050058C471 /* CasePaths */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4904425E2ABCB997009A54E7 /* XCRemoteSwiftPackageReference "swift-case-paths" */;
+			productName = CasePaths;
+		};
+		4977ED782ABD10050058C471 /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490442632ABCC8F0009A54E7 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		4977ED7A2ABD10050058C471 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+		4977ED7C2ABD10050058C471 /* SwiftUINavigationCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigationCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 493937C82ABC93A900412D55 /* Project object */;
+}
