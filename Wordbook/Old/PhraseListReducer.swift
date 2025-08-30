@@ -56,21 +56,23 @@ public struct PhraseListReducer: Reducer {
     public var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
-            case .onAppear:
+            case .onAppear, .dataNeedsReload, .addPhrase(_):
                 watchClient.session.sendMessage(["phrases": try? JSONEncoder().encode(state.data)], replyHandler: { _ in
                     print("reply")
                 })
+            default: break
+            }
+            return .none
+        }
+        Reduce { state, action in
+            switch action {
+            case .onAppear:
                 return .run { send in
                     await self.onTask(send: send)
                 }
                 
             case .dataNeedsReload:
                 let data = loadData()
-                if data != state.data {
-                    watchClient.session.sendMessage(["phrases": try? JSONEncoder().encode(state.data)], replyHandler: { _ in
-                        print("reply")
-                    })
-                }
                 state.data = data
                 
             case .addPhrase(let phrase):
@@ -78,9 +80,6 @@ public struct PhraseListReducer: Reducer {
                 data.insert(phrase, at: 0)
                 state.data = data
                 save(data)
-                watchClient.session.sendMessage(["phrases": try? JSONEncoder().encode(data)], replyHandler: { _ in
-                    print("reply")
-                })
                 
             case .removePhrase(id: let id): break
 //                state.list.remove(at: state.list.)

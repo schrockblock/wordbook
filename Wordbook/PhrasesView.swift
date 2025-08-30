@@ -10,45 +10,45 @@ import ComposableArchitecture
 
 @available(iOS 15.0, *)
 public struct PhrasesView: View {
-    let store: StoreOf<PhrasesReducer>
+    @Bindable
+    var store: StoreOf<PhrasesReducer>
     
     public init(store: StoreOf<PhrasesReducer>) {
         self.store = store
     }
     
     public var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
-            NavigationStack {
-                PhraseListView(store: store.scope(state: \.phrases, action: PhrasesReducer.Action.list))
-                    .toolbar(content: {
-                        Spacer()
-                        Text("Phrases")
-                        Spacer()
-                        Button(action: { viewStore.send(PhrasesReducer.Action.list(.sortByRecent)) }) {
-                            Image(systemName: viewStore.state.phrases.sortScheme == .recent ? "clock.fill" : "clock")
-                        }
-                        Button(action: { viewStore.send(PhrasesReducer.Action.list(.sortByAlphabet)) }) {
-                            Image(systemName: viewStore.state.phrases.sortScheme == .alphabet ? "a.square.fill" : "a.square")
-                        }
-                        Button(action: { viewStore.send(PhrasesReducer.Action.addPhrase) }, label: {
-                            Image(systemName: "plus")
-                        })
+        NavigationStack {
+            PhraseListView(store: store.scope(state: \.phrases, action: PhrasesReducer.Action.list))
+                .toolbar(content: {
+                    Spacer()
+                    Text("Phrases")
+                    Spacer()
+                    Button(action: { store.send(PhrasesReducer.Action.list(.sortByRecent)) }) {
+                        Image(systemName: store.state.phrases.sortScheme == .recent ? "clock.fill" : "clock")
+                    }
+                    Button(action: { store.send(PhrasesReducer.Action.list(.sortByAlphabet)) }) {
+                        Image(systemName: store.state.phrases.sortScheme == .alphabet ? "a.square.fill" : "a.square")
+                    }
+                    Button(action: { store.send(PhrasesReducer.Action.addPhrase) }, label: {
+                        Image(systemName: "plus")
                     })
-                    .sheet(store: self.store.scope(state: \.$addState, action: { .add($0) })) { addStore in
-                        NavigationStack {
-                          AddPhraseView(store: addStore)
+                })
+//                .searchable(text: $store.localFilter)
+                .sheet(store: self.store.scope(state: \.$addState, action: { .add($0) })) { addStore in
+                    NavigationStack {
+                        EditPhraseView(store: addStore)
                             .navigationTitle("New phrase")
                             .toolbar {
-                              ToolbarItem {
-                                  Button("Save") { viewStore.send(.savePhrase) }
-                              }
-                              ToolbarItem(placement: .cancellationAction) {
-                                  Button("Cancel") { viewStore.send(.cancelPhrase) }
-                              }
+                                ToolbarItem {
+                                    Button("Save") { store.send(.savePhrase) }
+                                }
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Cancel") { store.send(.cancelPhrase) }
+                                }
                             }
-                        }
-                      }
-            }
+                    }
+                }
         }
     }
 }

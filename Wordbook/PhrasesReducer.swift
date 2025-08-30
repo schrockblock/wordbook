@@ -11,8 +11,9 @@ import CasePaths
 
 @available(iOS 15.0, *)
 public struct PhrasesReducer: Reducer {
+    @ObservableState
     public struct State: Equatable {
-        @PresentationState var addState: AddPhraseReducer.State?
+        @Presents var addState: EditPhraseReducer.State?
         var phrases = PhraseListReducer.State()
         
         public init(phrases: [Phrase]? = nil) {
@@ -20,16 +21,18 @@ public struct PhrasesReducer: Reducer {
         }
     }
     
-    public enum Action: Equatable {
+    public enum Action: BindableAction {
         case onAppear
         case addPhrase
         case savePhrase
         case cancelPhrase
+        case binding(BindingAction<State>)
         case list(PhraseListReducer.Action)
-        case add(PresentationAction<AddPhraseReducer.Action>)
+        case add(PresentationAction<EditPhraseReducer.Action>)
     }
     
     public var body: some Reducer<State, Action> {
+        BindingReducer()
         Scope(state: \.phrases, action: /PhrasesReducer.Action.list) {
             PhraseListReducer()
         }
@@ -38,7 +41,7 @@ public struct PhrasesReducer: Reducer {
             case .onAppear:
                 return .none
             case .addPhrase:
-                state.addState = AddPhraseReducer.State()
+                state.addState = EditPhraseReducer.State()
                 return .none
             case .list(_), .add(_):
                 return .none
@@ -49,9 +52,10 @@ public struct PhrasesReducer: Reducer {
             case .cancelPhrase:
                 state.addState = nil
                 return .none
+            case .binding(_): return .none
             }
         }.ifLet(\.$addState, action: /Action.add) {
-            AddPhraseReducer()
+            EditPhraseReducer()
         }
     }
     

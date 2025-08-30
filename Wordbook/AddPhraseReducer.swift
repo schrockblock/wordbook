@@ -9,24 +9,27 @@ import SwiftUI
 import Speech
 import ComposableArchitecture
 
+@Reducer
 public struct AddPhraseReducer: Reducer {
     @Dependency(\.speechClient) var speechClient
     @Dependency(\.dismiss) var dismiss
     
+    @ObservableState
     public struct State: Equatable {
-        @PresentationState var alert: AlertState<Action.Alert>?
+        @Presents var alert: AlertState<Action.Alert>?
         var recording: RecordingStatus?
         
-        var text: String?
-        var translation: String?
+        var text: String = ""
+        var translation: String = ""
     }
     
-    public enum Action: Equatable {
+    public enum Action: BindableAction, Equatable {
         case toggleRecordingPhrase
         case toggleRecordingTranslation
         case speechResult(String)
         case alert(PresentationAction<Alert>)
         case delegate(Delegate)
+        case binding(BindingAction<State>)
         
         public enum Alert: Equatable {
             case confirmDiscard
@@ -53,7 +56,6 @@ public struct AddPhraseReducer: Reducer {
                 state.recording = state.recording == nil ? .translation : nil
             case .alert(.presented(.confirmDiscard)):
                 return .run { send in
-                    //await send(.delegate(.saveMeeting))
                     await self.dismiss()
                 }
                 
@@ -61,7 +63,7 @@ public struct AddPhraseReducer: Reducer {
                 let text = state.text
                 let translation = state.translation
                 return .run { send in
-                    await send(.delegate(.savePhrase(Phrase(id: text ?? "", translation: translation, createdAt: Date()))))
+                    await send(.delegate(.savePhrase(Phrase(id: text, translation: translation, createdAt: Date()))))
                     await self.dismiss()
                 }
                 
@@ -110,26 +112,4 @@ public struct AddPhraseReducer: Reducer {
             }
         }
     }
-}
-
-extension AlertState where Action == AddPhraseReducer.Action.Alert {
-  static func endMeeting(isDiscardable: Bool) -> Self {
-    Self {
-      TextState("End meeting?")
-    } actions: {
-      ButtonState(action: .confirmSave) {
-        TextState("Save and end")
-      }
-      if isDiscardable {
-        ButtonState(role: .destructive, action: .confirmDiscard) {
-          TextState("Discard")
-        }
-      }
-      ButtonState(role: .cancel) {
-        TextState("Resume")
-      }
-    } message: {
-      TextState("You are ending the meeting early. What would you like to do?")
-    }
-  }
 }

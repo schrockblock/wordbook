@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		492220CA2B0BFDDD00A70214 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220C92B0BFDDD00A70214 /* SplashView.swift */; };
-		492220CC2B0BFDFC00A70214 /* SplashReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220CB2B0BFDFC00A70214 /* SplashReducer.swift */; };
-		492220CE2B0BFE0800A70214 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220CD2B0BFE0800A70214 /* LoginView.swift */; };
-		492220D02B0BFE1400A70214 /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492220CF2B0BFE1400A70214 /* LoginReducer.swift */; };
-		4932A1AF2AE1BF220049760C /* EditPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A1AE2AE1BF220049760C /* EditPhraseView.swift */; };
 		4932A1B12AE1BF370049760C /* EditPhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */; };
 		493937D42ABC93A900412D55 /* WordbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937D32ABC93A900412D55 /* WordbookApp.swift */; };
 		493937D82ABC93AA00412D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493937D72ABC93AA00412D55 /* Assets.xcassets */; };
@@ -19,20 +14,34 @@
 		493937E52ABC93AA00412D55 /* WordbookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937E42ABC93AA00412D55 /* WordbookTests.swift */; };
 		493937EF2ABC93AA00412D55 /* WordbookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937EE2ABC93AA00412D55 /* WordbookUITests.swift */; };
 		493937F12ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493937F02ABC93AA00412D55 /* WordbookUITestsLaunchTests.swift */; };
-		493937FF2ABC940900412D55 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 493937FE2ABC940900412D55 /* ComposableArchitecture */; };
 		4939385C2ABC973C00412D55 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939385B2ABC973C00412D55 /* WidgetKit.framework */; };
 		4939385E2ABC973C00412D55 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939385D2ABC973C00412D55 /* SwiftUI.framework */; };
 		493938612ABC973C00412D55 /* WordbookWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938602ABC973C00412D55 /* WordbookWidgetBundle.swift */; };
 		493938632ABC973C00412D55 /* WordbookWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938622ABC973C00412D55 /* WordbookWidget.swift */; };
 		493938652ABC973D00412D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493938642ABC973D00412D55 /* Assets.xcassets */; };
 		493938692ABC973D00412D55 /* WordbookWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 493938592ABC973C00412D55 /* WordbookWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		494367D12BAF650600FE4F5C /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367C52BAF650600FE4F5C /* ResetPasswordView.swift */; };
+		494367D22BAF650600FE4F5C /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367C62BAF650600FE4F5C /* ForgotPasswordView.swift */; };
+		494367D32BAF650600FE4F5C /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367C72BAF650600FE4F5C /* LoginReducer.swift */; };
+		494367D42BAF650600FE4F5C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367C82BAF650600FE4F5C /* LoginView.swift */; };
+		494367D52BAF650600FE4F5C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367C92BAF650600FE4F5C /* SignUpView.swift */; };
+		494367D62BAF650600FE4F5C /* SignUpReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367CA2BAF650600FE4F5C /* SignUpReducer.swift */; };
+		494367D72BAF650600FE4F5C /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367CB2BAF650600FE4F5C /* LandingView.swift */; };
+		494367D82BAF650600FE4F5C /* ForgotPasswordReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367CC2BAF650600FE4F5C /* ForgotPasswordReducer.swift */; };
+		494367D92BAF650600FE4F5C /* ResetPasswordReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367CD2BAF650600FE4F5C /* ResetPasswordReducer.swift */; };
+		494367DA2BAF650600FE4F5C /* SplashReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367CE2BAF650600FE4F5C /* SplashReducer.swift */; };
+		494367DB2BAF650600FE4F5C /* LandingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367CF2BAF650600FE4F5C /* LandingReducer.swift */; };
+		494367DC2BAF650600FE4F5C /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367D02BAF650600FE4F5C /* SplashView.swift */; };
+		494367EE2BAF7A7800FE4F5C /* FunNet/Core in Frameworks */ = {isa = PBXBuildFile; productRef = 494367ED2BAF7A7800FE4F5C /* FunNet/Core */; };
+		494367F02BAF7A7800FE4F5C /* FunNet/ErrorHandling in Frameworks */ = {isa = PBXBuildFile; productRef = 494367EF2BAF7A7800FE4F5C /* FunNet/ErrorHandling */; };
+		494367F22BAF7A7800FE4F5C /* FunNet/TCA in Frameworks */ = {isa = PBXBuildFile; productRef = 494367F12BAF7A7800FE4F5C /* FunNet/TCA */; };
+		494367F42BAF7C4600FE4F5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494367F32BAF7C4600FE4F5C /* User.swift */; };
 		4977ED292ABCEC550058C471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4977ED282ABCEC550058C471 /* Assets.xcassets */; };
 		4977ED2C2ABCEC550058C471 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4977ED2B2ABCEC550058C471 /* Preview Assets.xcassets */; };
 		4977ED362ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED352ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift */; };
 		4977ED402ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED3F2ABCEC570058C471 /* WordbookAW_Watch_AppUITests.swift */; };
 		4977ED422ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED412ABCEC570058C471 /* WordbookAW_Watch_AppUITestsLaunchTests.swift */; };
 		4977ED452ABCEC570058C471 /* WordbookAW Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4977ED502ABCEC7B0058C471 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED4F2ABCEC7B0058C471 /* ComposableArchitecture */; };
 		4977ED612ABD08E50058C471 /* SpeechClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490442612ABCC2B8009A54E7 /* SpeechClient.swift */; };
 		4977ED622ABD08E50058C471 /* AddPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939387A2ABCA18800412D55 /* AddPhraseView.swift */; };
 		4977ED632ABD08E50058C471 /* PhrasesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493938782ABCA06C00412D55 /* PhrasesReducer.swift */; };
@@ -49,10 +58,6 @@
 		4977ED712ABD0CD60058C471 /* PhrasesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED702ABD0CD60058C471 /* PhrasesReducer.swift */; };
 		4977ED732ABD0D1B0058C471 /* AddPhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED722ABD0D1B0058C471 /* AddPhraseReducer.swift */; };
 		4977ED752ABD0D2C0058C471 /* AddPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED742ABD0D2C0058C471 /* AddPhraseView.swift */; };
-		4977ED772ABD10050058C471 /* CasePaths in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED762ABD10050058C471 /* CasePaths */; };
-		4977ED792ABD10050058C471 /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED782ABD10050058C471 /* Dependencies */; };
-		4977ED7B2ABD10050058C471 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED7A2ABD10050058C471 /* SwiftUINavigation */; };
-		4977ED7D2ABD10050058C471 /* SwiftUINavigationCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4977ED7C2ABD10050058C471 /* SwiftUINavigationCore */; };
 		4977ED7F2ABD13810058C471 /* SpecificLanguageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED7E2ABD13810058C471 /* SpecificLanguageTextField.swift */; };
 		4977ED812ABD1FC50058C471 /* WatchConnectivityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */; };
 		4977ED822ABD269A0058C471 /* WatchConnectivityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */; };
@@ -61,6 +66,15 @@
 		4977ED8D2ABD396D0058C471 /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977ED8C2ABD396D0058C471 /* Complication.swift */; };
 		4977ED8F2ABD396E0058C471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4977ED8E2ABD396E0058C471 /* Assets.xcassets */; };
 		4977ED932ABD396E0058C471 /* ComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4977ED882ABD396D0058C471 /* ComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49D2AF412BA220A100027B19 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 49D2AF402BA220A100027B19 /* ComposableArchitecture */; };
+		49D2AF432BA2219400027B19 /* AddableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF422BA2219400027B19 /* AddableListView.swift */; };
+		49D2AF452BA221F800027B19 /* AddableListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF442BA221F800027B19 /* AddableListReducer.swift */; };
+		49D2AF472BA2233600027B19 /* PhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF462BA2233600027B19 /* PhraseReducer.swift */; };
+		49D2AF492BA2234600027B19 /* PhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF482BA2234600027B19 /* PhraseView.swift */; };
+		49D2AF4B2BA2235700027B19 /* PhraseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF4A2BA2235700027B19 /* PhraseDetailsView.swift */; };
+		49D2AF4D2BA2248700027B19 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF4C2BA2248700027B19 /* Env.swift */; };
+		49D2AF4F2BA2258A00027B19 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 49D2AF4E2BA2258A00027B19 /* ComposableArchitecture */; };
+		49D2AF512BA2266500027B19 /* EditPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF502BA2266500027B19 /* EditPhraseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,11 +187,6 @@
 
 /* Begin PBXFileReference section */
 		490442612ABCC2B8009A54E7 /* SpeechClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechClient.swift; sourceTree = "<group>"; };
-		492220C92B0BFDDD00A70214 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		492220CB2B0BFDFC00A70214 /* SplashReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashReducer.swift; sourceTree = "<group>"; };
-		492220CD2B0BFE0800A70214 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		492220CF2B0BFE1400A70214 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
-		4932A1AE2AE1BF220049760C /* EditPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseView.swift; sourceTree = "<group>"; };
 		4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseReducer.swift; sourceTree = "<group>"; };
 		493937D02ABC93A900412D55 /* Wordbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493937D32ABC93A900412D55 /* WordbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordbookApp.swift; sourceTree = "<group>"; };
@@ -202,6 +211,19 @@
 		493938782ABCA06C00412D55 /* PhrasesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhrasesReducer.swift; sourceTree = "<group>"; };
 		4939387A2ABCA18800412D55 /* AddPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhraseView.swift; sourceTree = "<group>"; };
 		4939387C2ABCA19500412D55 /* AddPhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhraseReducer.swift; sourceTree = "<group>"; };
+		494367C52BAF650600FE4F5C /* ResetPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetPasswordView.swift; path = Wordbook/ResetPasswordView.swift; sourceTree = SOURCE_ROOT; };
+		494367C62BAF650600FE4F5C /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordView.swift; path = Wordbook/ForgotPasswordView.swift; sourceTree = SOURCE_ROOT; };
+		494367C72BAF650600FE4F5C /* LoginReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginReducer.swift; path = Wordbook/LoginReducer.swift; sourceTree = SOURCE_ROOT; };
+		494367C82BAF650600FE4F5C /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Wordbook/LoginView.swift; sourceTree = SOURCE_ROOT; };
+		494367C92BAF650600FE4F5C /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpView.swift; path = Wordbook/SignUpView.swift; sourceTree = SOURCE_ROOT; };
+		494367CA2BAF650600FE4F5C /* SignUpReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpReducer.swift; path = Wordbook/SignUpReducer.swift; sourceTree = SOURCE_ROOT; };
+		494367CB2BAF650600FE4F5C /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingView.swift; path = Wordbook/LandingView.swift; sourceTree = SOURCE_ROOT; };
+		494367CC2BAF650600FE4F5C /* ForgotPasswordReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordReducer.swift; path = Wordbook/ForgotPasswordReducer.swift; sourceTree = SOURCE_ROOT; };
+		494367CD2BAF650600FE4F5C /* ResetPasswordReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetPasswordReducer.swift; path = Wordbook/ResetPasswordReducer.swift; sourceTree = SOURCE_ROOT; };
+		494367CE2BAF650600FE4F5C /* SplashReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashReducer.swift; path = Wordbook/SplashReducer.swift; sourceTree = SOURCE_ROOT; };
+		494367CF2BAF650600FE4F5C /* LandingReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LandingReducer.swift; path = Wordbook/LandingReducer.swift; sourceTree = SOURCE_ROOT; };
+		494367D02BAF650600FE4F5C /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashView.swift; path = Wordbook/SplashView.swift; sourceTree = SOURCE_ROOT; };
+		494367F32BAF7C4600FE4F5C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WordbookAW Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4977ED282ABCEC550058C471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4977ED2B2ABCEC550058C471 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -222,6 +244,13 @@
 		4977ED8C2ABD396D0058C471 /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
 		4977ED8E2ABD396E0058C471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4977ED902ABD396E0058C471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49D2AF422BA2219400027B19 /* AddableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddableListView.swift; sourceTree = "<group>"; };
+		49D2AF442BA221F800027B19 /* AddableListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddableListReducer.swift; sourceTree = "<group>"; };
+		49D2AF462BA2233600027B19 /* PhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseReducer.swift; sourceTree = "<group>"; };
+		49D2AF482BA2234600027B19 /* PhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseView.swift; sourceTree = "<group>"; };
+		49D2AF4A2BA2235700027B19 /* PhraseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDetailsView.swift; sourceTree = "<group>"; };
+		49D2AF4C2BA2248700027B19 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		49D2AF502BA2266500027B19 /* EditPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +258,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				493937FF2ABC940900412D55 /* ComposableArchitecture in Frameworks */,
+				49D2AF412BA220A100027B19 /* ComposableArchitecture in Frameworks */,
+				494367F22BAF7A7800FE4F5C /* FunNet/TCA in Frameworks */,
+				494367F02BAF7A7800FE4F5C /* FunNet/ErrorHandling in Frameworks */,
+				494367EE2BAF7A7800FE4F5C /* FunNet/Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,11 +292,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4977ED7B2ABD10050058C471 /* SwiftUINavigation in Frameworks */,
-				4977ED792ABD10050058C471 /* Dependencies in Frameworks */,
-				4977ED7D2ABD10050058C471 /* SwiftUINavigationCore in Frameworks */,
-				4977ED502ABCEC7B0058C471 /* ComposableArchitecture in Frameworks */,
-				4977ED772ABD10050058C471 /* CasePaths in Frameworks */,
+				49D2AF4F2BA2258A00027B19 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,23 +357,26 @@
 			isa = PBXGroup;
 			children = (
 				493937D32ABC93A900412D55 /* WordbookApp.swift */,
-				492220C92B0BFDDD00A70214 /* SplashView.swift */,
-				492220CB2B0BFDFC00A70214 /* SplashReducer.swift */,
-				492220CD2B0BFE0800A70214 /* LoginView.swift */,
-				492220CF2B0BFE1400A70214 /* LoginReducer.swift */,
+				49D2AF4C2BA2248700027B19 /* Env.swift */,
+				49D2AF532BA27CC200027B19 /* Old */,
+				49D2AF522BA27CAB00027B19 /* AppOpen */,
 				493938762ABCA03800412D55 /* PhrasesView.swift */,
 				493938782ABCA06C00412D55 /* PhrasesReducer.swift */,
 				4939387A2ABCA18800412D55 /* AddPhraseView.swift */,
 				4939387C2ABCA19500412D55 /* AddPhraseReducer.swift */,
-				4932A1AE2AE1BF220049760C /* EditPhraseView.swift */,
+				49D2AF502BA2266500027B19 /* EditPhraseView.swift */,
 				4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */,
 				490442612ABCC2B8009A54E7 /* SpeechClient.swift */,
 				4977ED802ABD1FC50058C471 /* WatchConnectivityClient.swift */,
-				493938722ABC9E8700412D55 /* PhraseListView.swift */,
-				493938702ABC9E7200412D55 /* PhraseListReducer.swift */,
 				493938742ABC9F1C00412D55 /* Phrase.swift */,
 				493937D72ABC93AA00412D55 /* Assets.xcassets */,
 				493937D92ABC93AA00412D55 /* Preview Content */,
+				49D2AF422BA2219400027B19 /* AddableListView.swift */,
+				49D2AF442BA221F800027B19 /* AddableListReducer.swift */,
+				49D2AF482BA2234600027B19 /* PhraseView.swift */,
+				49D2AF462BA2233600027B19 /* PhraseReducer.swift */,
+				49D2AF4A2BA2235700027B19 /* PhraseDetailsView.swift */,
+				494367F32BAF7C4600FE4F5C /* User.swift */,
 			);
 			path = Wordbook;
 			sourceTree = "<group>";
@@ -446,6 +477,34 @@
 			path = Complication;
 			sourceTree = "<group>";
 		};
+		49D2AF522BA27CAB00027B19 /* AppOpen */ = {
+			isa = PBXGroup;
+			children = (
+				494367CC2BAF650600FE4F5C /* ForgotPasswordReducer.swift */,
+				494367C62BAF650600FE4F5C /* ForgotPasswordView.swift */,
+				494367CF2BAF650600FE4F5C /* LandingReducer.swift */,
+				494367CB2BAF650600FE4F5C /* LandingView.swift */,
+				494367C72BAF650600FE4F5C /* LoginReducer.swift */,
+				494367C82BAF650600FE4F5C /* LoginView.swift */,
+				494367CD2BAF650600FE4F5C /* ResetPasswordReducer.swift */,
+				494367C52BAF650600FE4F5C /* ResetPasswordView.swift */,
+				494367CA2BAF650600FE4F5C /* SignUpReducer.swift */,
+				494367C92BAF650600FE4F5C /* SignUpView.swift */,
+				494367CE2BAF650600FE4F5C /* SplashReducer.swift */,
+				494367D02BAF650600FE4F5C /* SplashView.swift */,
+			);
+			path = AppOpen;
+			sourceTree = "<group>";
+		};
+		49D2AF532BA27CC200027B19 /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				493938722ABC9E8700412D55 /* PhraseListView.swift */,
+				493938702ABC9E7200412D55 /* PhraseListReducer.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,7 +527,10 @@
 			);
 			name = Wordbook;
 			packageProductDependencies = (
-				493937FE2ABC940900412D55 /* ComposableArchitecture */,
+				49D2AF402BA220A100027B19 /* ComposableArchitecture */,
+				494367ED2BAF7A7800FE4F5C /* FunNet/Core */,
+				494367EF2BAF7A7800FE4F5C /* FunNet/ErrorHandling */,
+				494367F12BAF7A7800FE4F5C /* FunNet/TCA */,
 			);
 			productName = Wordbook;
 			productReference = 493937D02ABC93A900412D55 /* Wordbook.app */;
@@ -544,11 +606,7 @@
 			);
 			name = "WordbookAW Watch App";
 			packageProductDependencies = (
-				4977ED4F2ABCEC7B0058C471 /* ComposableArchitecture */,
-				4977ED762ABD10050058C471 /* CasePaths */,
-				4977ED782ABD10050058C471 /* Dependencies */,
-				4977ED7A2ABD10050058C471 /* SwiftUINavigation */,
-				4977ED7C2ABD10050058C471 /* SwiftUINavigationCore */,
+				49D2AF4E2BA2258A00027B19 /* ComposableArchitecture */,
 			);
 			productName = "WordbookAW Watch App";
 			productReference = 4977ED222ABCEC540058C471 /* WordbookAW Watch App.app */;
@@ -657,10 +715,8 @@
 			);
 			mainGroup = 493937C72ABC93A900412D55;
 			packageReferences = (
-				493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				4904425E2ABCB997009A54E7 /* XCRemoteSwiftPackageReference "swift-case-paths" */,
-				490442632ABCC8F0009A54E7 /* XCRemoteSwiftPackageReference "swift-dependencies" */,
-				490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+				49D2AF3F2BA220A100027B19 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				494367EC2BAF7A7700FE4F5C /* XCRemoteSwiftPackageReference "funnet" */,
 			);
 			productRefGroup = 493937D12ABC93A900412D55 /* Products */;
 			projectDirPath = "";
@@ -748,22 +804,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				492220D02B0BFE1400A70214 /* LoginReducer.swift in Sources */,
 				4977ED642ABD08E50058C471 /* AddPhraseReducer.swift in Sources */,
 				4932A1B12AE1BF370049760C /* EditPhraseReducer.swift in Sources */,
+				494367DB2BAF650600FE4F5C /* LandingReducer.swift in Sources */,
+				49D2AF4B2BA2235700027B19 /* PhraseDetailsView.swift in Sources */,
+				494367F42BAF7C4600FE4F5C /* User.swift in Sources */,
 				4977ED672ABD0BAB0058C471 /* PhraseListView.swift in Sources */,
-				492220CE2B0BFE0800A70214 /* LoginView.swift in Sources */,
+				494367D92BAF650600FE4F5C /* ResetPasswordReducer.swift in Sources */,
+				49D2AF512BA2266500027B19 /* EditPhraseView.swift in Sources */,
+				494367D52BAF650600FE4F5C /* SignUpView.swift in Sources */,
+				494367D72BAF650600FE4F5C /* LandingView.swift in Sources */,
+				49D2AF492BA2234600027B19 /* PhraseView.swift in Sources */,
 				4977ED612ABD08E50058C471 /* SpeechClient.swift in Sources */,
 				493937D42ABC93A900412D55 /* WordbookApp.swift in Sources */,
+				494367D42BAF650600FE4F5C /* LoginView.swift in Sources */,
 				4977ED682ABD0BAB0058C471 /* PhraseListReducer.swift in Sources */,
-				4932A1AF2AE1BF220049760C /* EditPhraseView.swift in Sources */,
+				494367D32BAF650600FE4F5C /* LoginReducer.swift in Sources */,
+				49D2AF472BA2233600027B19 /* PhraseReducer.swift in Sources */,
 				4977ED622ABD08E50058C471 /* AddPhraseView.swift in Sources */,
-				492220CA2B0BFDDD00A70214 /* SplashView.swift in Sources */,
+				494367DC2BAF650600FE4F5C /* SplashView.swift in Sources */,
+				494367D62BAF650600FE4F5C /* SignUpReducer.swift in Sources */,
+				49D2AF452BA221F800027B19 /* AddableListReducer.swift in Sources */,
 				4977ED632ABD08E50058C471 /* PhrasesReducer.swift in Sources */,
+				494367D82BAF650600FE4F5C /* ForgotPasswordReducer.swift in Sources */,
 				4977ED812ABD1FC50058C471 /* WatchConnectivityClient.swift in Sources */,
+				494367D12BAF650600FE4F5C /* ResetPasswordView.swift in Sources */,
 				4977ED652ABD08E50058C471 /* PhrasesView.swift in Sources */,
 				4977ED662ABD0BAB0058C471 /* Phrase.swift in Sources */,
-				492220CC2B0BFDFC00A70214 /* SplashReducer.swift in Sources */,
+				49D2AF432BA2219400027B19 /* AddableListView.swift in Sources */,
+				494367D22BAF650600FE4F5C /* ForgotPasswordView.swift in Sources */,
+				49D2AF4D2BA2248700027B19 /* Env.swift in Sources */,
+				494367DA2BAF650600FE4F5C /* SplashReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,7 +997,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -980,7 +1051,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1009,6 +1080,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1041,6 +1113,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1213,7 +1286,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -1246,7 +1319,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -1479,70 +1552,49 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4904425E2ABCB997009A54E7 /* XCRemoteSwiftPackageReference "swift-case-paths" */ = {
+		494367EC2BAF7A7700FE4F5C /* XCRemoteSwiftPackageReference "funnet" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-case-paths";
+			repositoryURL = "https://github.com/LithoByte/funnet";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = feature/es/async;
+				kind = branch;
 			};
 		};
-		490442632ABCC8F0009A54E7 /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-dependencies";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		49D2AF3F2BA220A100027B19 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = "observation-beta";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		493937FE2ABC940900412D55 /* ComposableArchitecture */ = {
+		494367ED2BAF7A7800FE4F5C /* FunNet/Core */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 494367EC2BAF7A7700FE4F5C /* XCRemoteSwiftPackageReference "funnet" */;
+			productName = FunNet/Core;
+		};
+		494367EF2BAF7A7800FE4F5C /* FunNet/ErrorHandling */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494367EC2BAF7A7700FE4F5C /* XCRemoteSwiftPackageReference "funnet" */;
+			productName = FunNet/ErrorHandling;
+		};
+		494367F12BAF7A7800FE4F5C /* FunNet/TCA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 494367EC2BAF7A7700FE4F5C /* XCRemoteSwiftPackageReference "funnet" */;
+			productName = FunNet/TCA;
+		};
+		49D2AF402BA220A100027B19 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49D2AF3F2BA220A100027B19 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
-		4977ED4F2ABCEC7B0058C471 /* ComposableArchitecture */ = {
+		49D2AF4E2BA2258A00027B19 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 493937FD2ABC940900412D55 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 49D2AF3F2BA220A100027B19 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
-		};
-		4977ED762ABD10050058C471 /* CasePaths */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4904425E2ABCB997009A54E7 /* XCRemoteSwiftPackageReference "swift-case-paths" */;
-			productName = CasePaths;
-		};
-		4977ED782ABD10050058C471 /* Dependencies */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 490442632ABCC8F0009A54E7 /* XCRemoteSwiftPackageReference "swift-dependencies" */;
-			productName = Dependencies;
-		};
-		4977ED7A2ABD10050058C471 /* SwiftUINavigation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
-			productName = SwiftUINavigation;
-		};
-		4977ED7C2ABD10050058C471 /* SwiftUINavigationCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 490442662ABCC91C009A54E7 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
-			productName = SwiftUINavigationCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,16 +6,25 @@
 //
 
 import Foundation
+import ComposableArchitecture
 
 public struct Phrase: Codable, Identifiable, Equatable, Hashable {
     public let id: String
-    public let translation: String?
+    public let translation: String
     public let createdAt: Date
     
-    public init(id: String, translation: String?, createdAt: Date) {
+    public init(id: String, translation: String, createdAt: Date) {
         self.id = id
         self.translation = translation
         self.createdAt = createdAt
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    public static func ==(_ lhs: Phrase, _ rhs: Phrase) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

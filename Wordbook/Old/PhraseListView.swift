@@ -22,7 +22,9 @@ public struct PhraseListView: View {
                     Text(phrase.id)
                     Text(phrase.translation ?? "").foregroundColor(.secondary)
                 }
-            }.onAppear {
+            }
+//            .searchable(text: )
+            .onAppear {
                 viewStore.send(.onAppear)
             }
         }
