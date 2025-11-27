@@ -13,8 +13,10 @@ import ComposableArchitecture
 
 @Reducer
 public struct EditPhraseReducer {
+    struct DebounceId: Hashable {}
     @Dependency(\.speechClient) var speechClient
     @Dependency(\.dismiss) var dismiss
+    @Dependency(\.mainQueue) var mainQueue
     
     @ObservableState
     public struct State: Equatable {
@@ -24,9 +26,11 @@ public struct EditPhraseReducer {
         var phrase: Phrase?
         var text: String = ""
         var translation: String = ""
+        var englishTranslator: ((String) async throws -> TranslationSession.Response)?
         var englishSession: TranslationSession?
+        var germanTranslator: ((String) async throws -> TranslationSession.Response)?
         var germanSession: TranslationSession?
-        var autoTranslations: [String] = []
+        var isAutoTranslationOn: Bool = true
         var isSaveDisabled: Bool = true
         
         init(phrase: Phrase? = nil) {
@@ -43,7 +47,6 @@ public struct EditPhraseReducer {
             && lhs.phrase == rhs.phrase
             && lhs.text == rhs.text
             && lhs.translation == rhs.translation
-            && lhs.autoTranslations == rhs.autoTranslations
             && ((lhs.englishSession == nil && rhs.englishSession != nil) || (lhs.englishSession != nil && rhs.englishSession == nil))
             && ((lhs.germanSession == nil && rhs.germanSession != nil) || (lhs.germanSession != nil && rhs.germanSession == nil))
         }
@@ -52,10 +55,10 @@ public struct EditPhraseReducer {
     public enum Action: BindableAction {
         case toggleRecordingPhrase
         case toggleRecordingTranslation
-        case chooseTranslation(String)
         case initializeEnglish(TranslationSession)
         case initializeGerman(TranslationSession)
-        case translationResult(String)
+        case germanTranslationResult(String)
+        case englishTranslationResult(String)
         case speechResult(String)
         case alert(PresentationAction<Alert>)
         case delegate(Delegate)
@@ -79,17 +82,10 @@ public struct EditPhraseReducer {
         BindingReducer()
             .onChange(of: \.translation) { oldValue, newValue in
                 Reduce { state, action in
-                    if let session = state.englishSession, state.text.isEmpty {
+                    if let translator = state.englishTranslator, state.isAutoTranslationOn {
                         let translation = state.translation
                         return .run { send in
-                            if !translation.isEmpty {
-                                do {
-                                    let response = try await session.translate(translation)
-                                    await send(.translationResult(response.targetText))
-                                } catch {
-                                    
-                                }
-                            }
+                            await onTranslationChanged(translator, translation, send)
                         }
                     } else {
                         state.isSaveDisabled = newValue.isEmpty
@@ -99,17 +95,10 @@ public struct EditPhraseReducer {
             }
             .onChange(of: \.text) { oldValue, newValue in
                 Reduce { state, action in
-                    if let session = state.germanSession, state.translation.isEmpty {
+                    if let translator = state.germanTranslator, state.isAutoTranslationOn {
                         let text = state.text
                         return .run { send in
-                            if !text.isEmpty {
-                                do {
-                                    let response = try await session.translate(text)
-                                    await send(.translationResult(response.targetText))
-                                } catch {
-                                    
-                                }
-                            }
+                            await onTextChanged(translator, text, send)
                         }
                     } else {
                         state.isSaveDisabled = newValue.isEmpty
@@ -120,19 +109,16 @@ public struct EditPhraseReducer {
         Reduce { state, action in
             switch action {
             case let .initializeEnglish(session):
-                state.englishSession = session
+                if state.translation.isEmpty {
+                    state.englishSession = session
+                    state.englishTranslator = session.translate
+                }
                 
             case let .initializeGerman(session):
-                state.germanSession = session
-                
-            case let .chooseTranslation(id):
                 if state.text.isEmpty {
-                    state.text = id
-                } else if state.translation.isEmpty {
-                    state.translation = id
+                    state.germanSession = session
+                    state.germanTranslator = session.translate
                 }
-                state.autoTranslations = []
-                state.isSaveDisabled = false
                 
             case .toggleRecordingPhrase:
                 SpeechClient.language = .german
@@ -142,8 +128,11 @@ public struct EditPhraseReducer {
                 SpeechClient.language = .english
                 state.recording = state.recording == nil ? .translation : nil
                 
-            case let .translationResult(result):
-                state.autoTranslations = [result]
+            case let .germanTranslationResult(germanText):
+                state.text = germanText
+                
+            case let .englishTranslationResult(englishText):
+                state.translation = englishText
                 
             case .alert(.presented(.confirmDiscard)):
                 return .run { send in
@@ -154,7 +143,13 @@ public struct EditPhraseReducer {
                 let text = state.text
                 let translation = state.translation
                 return .run { send in
-                    await send(.delegate(.savePhrase(Phrase(id: text, translation: translation, createdAt: Date()))))
+                    await send(
+                        .delegate(
+                            .savePhrase(
+                                Phrase(id: text, translation: translation, createdAt: Date())
+                            )
+                        )
+                    )
                     await self.dismiss()
                 }
                 
@@ -169,8 +164,24 @@ public struct EditPhraseReducer {
                     switch status {
                     case .text:
                         state.text = transcript
+                        if let translator = state.germanTranslator {
+                            let text = transcript
+                            return .run { send in
+                                await onTextChanged(translator, text, send)
+                            }
+                        } else {
+                            state.isSaveDisabled = transcript.isEmpty
+                        }
                     case .translation:
                         state.translation = transcript
+                        if let translator = state.englishTranslator {
+                            let translation = transcript
+                            return .run { send in
+                                await onTranslationChanged(translator, translation, send)
+                            }
+                        } else {
+                            state.isSaveDisabled = transcript.isEmpty
+                        }
                     }
                 }
                 return .none
@@ -181,24 +192,45 @@ public struct EditPhraseReducer {
                 return .run { send in
                     await self.onTask(send: send)
                 }
+                .cancellable(id: DebounceId(), cancelInFlight: true)
             }
             return .none
-        }.ifLet(\.$alert, action: /Action.alert)
+        }
+        .ifLet(\.$alert, action: /Action.alert)
+    }
+    
+    private func onTextChanged(_ translator: (String) async throws -> TranslationSession.Response, _ text: String, _ send: Send<Action>) async {
+        if !text.isEmpty {
+            do {
+                let response = try await translator(text)
+                await send(.englishTranslationResult(response.targetText))
+            } catch {}
+        } else {
+            await send(.englishTranslationResult(""))
+        }
+    }
+    
+    private func onTranslationChanged(_ translator: (String) async throws -> TranslationSession.Response, _ translation: String, _ send: Send<Action>) async {
+        if !translation.isEmpty {
+            do {
+                let response = try await translator(translation)
+                await send(.germanTranslationResult(response.targetText))
+            } catch {}
+        } else {
+            await send(.germanTranslationResult(""))
+        }
     }
     
     private func onTask(send: Send<Action>) async {
         await withTaskGroup(of: Void.self) { group in
             group.addTask {
                 let status = await self.speechClient.requestAuthorization()
-                
                 if status == SFSpeechRecognizerAuthorizationStatus.authorized.rawValue {
                     do {
                         for try await transcript in self.speechClient.start() {
                             await send(.speechResult(transcript))
                         }
-                    } catch {
-                        // TODO: Handle error
-                    }
+                    } catch {}
                 }
             }
         }

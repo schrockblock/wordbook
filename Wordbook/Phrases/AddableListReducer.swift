@@ -18,6 +18,7 @@ struct AddableListReducer {
         var displayedPhrases: IdentifiedArrayOf<Phrase> = .init()
         var localFilter = ""
         var sortScheme: SortScheme = .recent
+        var key: String
         
         @Presents var new: EditPhraseReducer.State?
         @Presents var edit: EditPhraseReducer.State?
@@ -36,9 +37,11 @@ struct AddableListReducer {
         }
         
         public init(data: [Phrase] = loadData(),
+                    key: String = "phrases",
                     phraseToItemState: @escaping (Phrase) -> PhraseReducer.State,
                     phraseToSearchableString: ((Phrase) -> String)?
         ) {
+            self.key = key
             var phraseSet = Set<Phrase>()
             data.forEach { if !phraseSet.contains($0) { phraseSet.insert($0) } }
             self.allPhrases = IdentifiedArray(uniqueElements: Array(phraseSet).filter { !$0.id.isEmpty })
@@ -91,7 +94,7 @@ struct AddableListReducer {
                 data.insert(phrase, at: 0)
                 state.allPhrases = data
                 state.displayedPhrases = displayable(from: state.allPhrases, state.localFilter, state.sortScheme, state.phraseToSearchableString)
-                save(data.elements)
+                save(data.elements, for: state.key)
                 
                 state.new = nil
                 
@@ -106,7 +109,7 @@ struct AddableListReducer {
                         data.insert(newPhrase, at: 0)
                     }
                     state.allPhrases = data
-                    save(data.elements)
+                    save(data.elements, for: state.key)
                 }
                 state.edit = nil
             case .cancel:
@@ -138,7 +141,7 @@ struct AddableListReducer {
                     data.remove(at: index)
                 }
                 state.allPhrases = data
-                save(data.elements)
+                save(data.elements, for: state.key)
                 
             case .shuffle: break
                 
@@ -184,7 +187,7 @@ struct AddableListReducer {
             EditPhraseReducer()
         }
         .ifLet(\.$edit, action: \.edit) {
-            EditPhraseReducer()
+            EditPhraseReducer()._printChanges()
         }
         .ifLet(\.$details, action: \.details) {
             PhraseReducer()

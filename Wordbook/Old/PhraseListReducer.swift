@@ -112,8 +112,8 @@ public struct PhraseListReducer: Reducer {
     }
 }
 
-public func loadData() -> [Phrase] {
-    if let data = UserDefaults.standard.data(forKey: "phrases"),
+public func loadData(_ key: String = "phrases") -> [Phrase] {
+    if let data = UserDefaults.standard.data(forKey: key),
         let phrases = try? JSONDecoder().decode([Phrase].self, from: data) {
         return phrases
     }
@@ -128,6 +128,6 @@ func saveUnique(_ phrases: [Phrase]) {
     save(saveData)
 }
 
-func save(_ phrases: [Phrase]) {
-    try? UserDefaults.standard.set(JSONEncoder().encode(phrases), forKey: "phrases")
+func save(_ phrases: [Phrase], for key: String = "phrases") {
+    try? UserDefaults.standard.set(JSONEncoder().encode(phrases), forKey: key)
 }
