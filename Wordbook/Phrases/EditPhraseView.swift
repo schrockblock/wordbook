@@ -16,15 +16,10 @@ enum EditFocusTargets: Hashable {
 let imageHeight: CGFloat = 90
 struct EditPhraseView: View {
     @Bindable var store: StoreOf<EditPhraseReducer>
-    @FocusState private var focusState: EditFocusTargets?// = FocusState<EditFocusTargets?>()
+    @FocusState private var focusState: EditFocusTargets?
     
     var body: some View {
         List {
-            HStack {
-                Toggle(isOn: $store.isAutoTranslationOn) {
-                    Text("Autotranslate")
-                }
-            }
             Section("Text") {
                 HStack {
                     Button(action: { store.send(.toggleRecordingPhrase) }) {
@@ -39,17 +34,6 @@ struct EditPhraseView: View {
                         }
                 }
             }
-            
-//            if !store.autoTranslations.isEmpty, focusState == .text {
-//                Section("Auto translations") {
-//                    ForEach(store.autoTranslations, id: \.self) { translation in
-//                        Text(translation)
-//                            .onTapGesture {
-//                                store.send(.chooseTranslation(translation))
-//                            }
-//                    }
-//                }
-//            }
             
             Section("Translation") {
                 HStack {
@@ -66,16 +50,11 @@ struct EditPhraseView: View {
                 }
             }
             
-//            if !store.autoTranslations.isEmpty, focusState == .translation {
-//                Section("Auto translations") {
-//                    ForEach(store.autoTranslations, id: \.self) { translation in
-//                        Text(translation)
-//                            .onTapGesture {
-//                                store.send(.chooseTranslation(translation))
-//                            }
-//                    }
-//                }
-//            }
+            HStack {
+                Toggle(isOn: $store.isAutoTranslationOn) {
+                    Text("Autotranslate")
+                }
+            }
         }
     }
 }
