@@ -12,14 +12,16 @@ import ComposableArchitecture
 struct WordbookApp: App {
     var body: some Scene {
         WindowGroup {
-            //SplashView(store: Store(initialState: SplashReducer.State(), reducer: { SplashReducer()._printChanges() }))
-//            PhrasesView(store: Store(initialState: PhrasesReducer.State(), reducer: { PhrasesReducer()._printChanges() }))
-            AddableListView(title: "Phrases",
-                            store: Store(initialState: AddableListReducer.State(phraseToItemState: { $0 },                                                                     phraseToSearchableString: { "\($0.id) \($0.translation)" }), reducer: { AddableListReducer() }),
-                            rowContent: PhraseView.init,
-                            detailsContent: PhraseView.init,
-                            addContent: EditPhraseView.init,
-                            editContent: EditPhraseView.init)
+            WorterbuchListView(
+                title: "Wordbooks",
+                store: Store(
+                    initialState: WorterbuchListReducer.State(
+                        worterbuchToItemState: { WorterbuchItemReducer.State(worterbuch: $0) },
+                        worterbuchToSearchableString: { $0.name }
+                    ),
+                    reducer: { WorterbuchListReducer() }
+                )
+            )
         }
     }
 }

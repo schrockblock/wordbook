@@ -10,18 +10,23 @@ import ComposableArchitecture
 
 struct EditWorterbuchView: View {
     @Bindable var store: StoreOf<EditWorterbuchReducer>
-    
+
     var body: some View {
-        HStack {
-            TextField(text: $store.worterbuch.name) {
-                Text("Name")
+        Form {
+            Section("Name") {
+                TextField("Name", text: $store.worterbuch.name)
             }
-                .padding()
-            Spacer()
+            Section("Target language") {
+                Picker("Language", selection: $store.worterbuch.targetLanguage) {
+                    ForEach(Language.allCases.filter { $0 != .english }, id: \.self) { language in
+                        Text(language.displayName).tag(language)
+                    }
+                }
+            }
         }
     }
 }
 
 //#Preview {
-//    EditWorterbuchView(store: Store(initialState: EditWorterbuchReducer.State(worterbuch: Worterbuch()), reducer: { EditWorterbuchReducer() }))
+//    EditWorterbuchView(store: Store(initialState: EditWorterbuchReducer.State(worterbuch: Worterbuch(name: "", key: "")), reducer: { EditWorterbuchReducer() }))
 //}

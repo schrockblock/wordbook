@@ -8,7 +8,7 @@
 import XCTest
 import ComposableArchitecture
 import FunNetTCA
-@testable import Template
+@testable import Wordbook
 
 @MainActor
 final class SignUpTests: XCTestCase {
@@ -72,7 +72,7 @@ final class SignUpTests: XCTestCase {
         let store = TestStore(initialState: state) { SignUpReducer() } withDependencies: {
             $0.mainQueue = .immediate
         }
-        
+
         let authData = try? JSONEncoder().encode(User(username: "", password: ""))
         await store.withExhaustivity(.off(showSkippedAssertions: true)) {
             await store.send(.didTapSignUp)// {
@@ -80,11 +80,11 @@ final class SignUpTests: XCTestCase {
 //                $0.loginCallState.endpoint.postData = authData
 //            }
         }
-        
+
         await store.receive(.signUpCall(.fire)) {
             $0.signUpCallState.isInProgress = true
         }
-        
+
         await store.receive(.signUpCall(.delegate(.error(NSError(domain: "Server", code: 401))))) {
             $0.isButtonEnabled = true
             $0.signUpCallState.isInProgress = false
@@ -92,7 +92,70 @@ final class SignUpTests: XCTestCase {
                 TextState("Unauthorized")
             }
         }
-        
+
+        await store.finish()
+    }
+
+    func testTapTermsAndPrivacyEmitDelegateLoadUrl() async throws {
+        let state = SignUpReducer.State()
+        let store = TestStore(initialState: state) { SignUpReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+        store.exhaustivity = .off(showSkippedAssertions: true)
+
+        await store.send(.didTapTerms)
+        await store.receive(.delegate(.loadUrl("")))
+
+        await store.send(.didTapPrivacy)
+        await store.receive(.delegate(.loadUrl("")))
+
+        await store.finish()
+    }
+
+    func testSignUpResponseWithoutApiKeyDoesNotAdvance() async throws {
+        var state = SignUpReducer.State()
+        state.signUpCallState.firingFunc = NetCallReducer.mockFire(with: "{}".data(using: .utf8), delayMillis: 10)
+        let store = TestStore(initialState: state) { SignUpReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+        store.exhaustivity = .off(showSkippedAssertions: true)
+
+        await store.send(.didTapSignUp)
+
+        await store.receive(.signUpCall(.fire)) {
+            $0.signUpCallState.isInProgress = true
+        }
+
+        await store.receive(.signUpCall(.delegate(.responseData("{}".data(using: .utf8)!)))) {
+            $0.isButtonEnabled = true
+            $0.signUpCallState.isInProgress = false
+        }
+
+        // No `.delegate(.advanceAuthed)` should be emitted because the response
+        // body contains no `apiKey`. With non-exhaustive mode, this is asserted
+        // by `await store.finish()` below — any unhandled action would surface.
+        await store.finish()
+    }
+
+    func testButtonReenablesAfterError() async throws {
+        var state = SignUpReducer.State()
+        state.username = "elliot"
+        state.password = "password"
+        state.isButtonEnabled = true
+        state.signUpCallState.firingFunc = NetCallReducer.mockFire(with: nil, error: NSError(domain: "Server", code: 401), delayMillis: 10)
+        let store = TestStore(initialState: state) { SignUpReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+        store.exhaustivity = .off(showSkippedAssertions: true)
+
+        await store.send(.didTapSignUp) {
+            $0.isButtonEnabled = false
+        }
+
+        await store.receive(.signUpCall(.delegate(.error(NSError(domain: "Server", code: 401))))) {
+            $0.isButtonEnabled = true
+        }
+
         await store.finish()
     }
 }

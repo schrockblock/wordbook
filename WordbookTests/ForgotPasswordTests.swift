@@ -9,7 +9,7 @@ import XCTest
 import FunNetCore
 import FunNetTCA
 import ComposableArchitecture
-@testable import Template
+@testable import Wordbook
 
 @MainActor
 final class ForgotPasswordTests: XCTestCase {
@@ -59,16 +59,16 @@ final class ForgotPasswordTests: XCTestCase {
         let store = TestStore(initialState: state) { ForgotPasswordReducer() } withDependencies: {
             $0.mainQueue = .immediate
         }
-        
+
         let authData = try? JSONEncoder().encode(User(username: ""))
         await store.send(.didTapReset) {
             $0.forgotPasswordCallState.endpoint.postData = authData
         }
-        
+
         await store.receive(.forgotPasswordCall(.fire)) {
             $0.forgotPasswordCallState.isInProgress = true
         }
-        
+
         await store.receive(.forgotPasswordCall(.delegate(.error(NSError(domain: "Server", code: 401))))) {
             $0.isButtonEnabled = true
             $0.forgotPasswordCallState.isInProgress = false
@@ -76,7 +76,45 @@ final class ForgotPasswordTests: XCTestCase {
                 TextState("Unauthorized")
             }
         }
-        
+
+        await store.finish()
+    }
+
+    func testResetResponseWithoutApiKeyDoesNotEmitDidReset() async throws {
+        var state = ForgotPasswordReducer.State(username: "elliot")
+        state.forgotPasswordCallState.firingFunc = NetCallReducer.mockFire(with: "{}".data(using: .utf8), delayMillis: 10)
+        let store = TestStore(initialState: state) { ForgotPasswordReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+
+        await store.withExhaustivity(.off(showSkippedAssertions: true)) {
+            await store.send(.didTapReset)
+
+            await store.receive(.forgotPasswordCall(.fire))
+
+            await store.receive(.forgotPasswordCall(.delegate(.responseData("{}".data(using: .utf8)!)))) {
+                $0.isButtonEnabled = true
+                $0.forgotPasswordCallState.isInProgress = false
+            }
+        }
+
+        XCTAssertEqual(store.state.isButtonEnabled, true)
+
+        await store.finish()
+    }
+
+    func testEmptyUsernameDisablesButton() async throws {
+        var state = ForgotPasswordReducer.State(username: "elliot", isButtonEnabled: true)
+        state.forgotPasswordCallState.firingFunc = NetCallReducer.mockFire(with: mockUser.data(using: .utf8), delayMillis: 10)
+        let store = TestStore(initialState: state) { ForgotPasswordReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+
+        await store.send(.binding(.set(\.username, ""))) {
+            $0.username = ""
+            $0.isButtonEnabled = false
+        }
+
         await store.finish()
     }
 

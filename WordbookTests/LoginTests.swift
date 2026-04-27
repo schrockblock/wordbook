@@ -8,7 +8,7 @@
 import XCTest
 import ComposableArchitecture
 import FunNetTCA
-@testable import Template
+@testable import Wordbook
 
 @MainActor
 final class LoginTests: XCTestCase {
@@ -73,7 +73,7 @@ final class LoginTests: XCTestCase {
         let store = TestStore(initialState: state) { LoginReducer() } withDependencies: {
             $0.mainQueue = .immediate
         }
-        
+
         let authData = try? JSONEncoder().encode(User(username: "", password: ""))
         await store.withExhaustivity(.off(showSkippedAssertions: true)) {
             await store.send(.didTapLogin)// {
@@ -81,12 +81,12 @@ final class LoginTests: XCTestCase {
 //                $0.loginCallState.endpoint.postData = authData
 //            }
         }
-        
+
         await store.receive(.loginCall(.fire)) {
             $0.loginCallState.isInProgress = true
             $0.isLoginButtonEnabled = false
         }
-        
+
         await store.receive(.loginCall(.delegate(.error(NSError(domain: "Server", code: 401))))) {
             $0.loginCallState.isInProgress = false
             $0.isLoginButtonEnabled = true
@@ -94,7 +94,111 @@ final class LoginTests: XCTestCase {
                 TextState("Incorrect username or password")
             }
         }
-        
+
+        await store.finish()
+    }
+
+    func testTapForgotPresentsForgot() async throws {
+        let store = TestStore(initialState: LoginReducer.State()) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+
+        await store.send(.didTapForgot) {
+            $0.forgot = ForgotPasswordReducer.State()
+        }
+
+        await store.finish()
+    }
+
+    func testTapSignUpPresentsSignUp() async throws {
+        let store = TestStore(initialState: LoginReducer.State()) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+
+        await store.send(.didTapSignUp) {
+            $0.signUp = SignUpReducer.State()
+        }
+
+        await store.finish()
+    }
+
+    func testForgotChildResetClearsPresentation() async throws {
+        var state = LoginReducer.State()
+        state.forgot = ForgotPasswordReducer.State()
+        let store = TestStore(initialState: state) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+        store.exhaustivity = .off(showSkippedAssertions: true)
+
+        await store.send(.forgot(.presented(.delegate(.didReset)))) {
+            $0.forgot = nil
+        }
+
+        await store.finish()
+    }
+
+    func testTapTermsEmitsDelegateLoadUrl() async throws {
+        let store = TestStore(initialState: LoginReducer.State()) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+
+        await store.send(.didTapTerms)
+        await store.receive(.delegate(.loadUrl("")))
+
+        await store.finish()
+    }
+
+    func testTapPrivacyEmitsDelegateLoadUrl() async throws {
+        let store = TestStore(initialState: LoginReducer.State()) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+
+        await store.send(.didTapPrivacy)
+        await store.receive(.delegate(.loadUrl("")))
+
+        await store.finish()
+    }
+
+    func test403ErrorShowsIncorrectCredentialsMessage() async throws {
+        var state = LoginReducer.State(username: "elliot", password: "password", isLoginButtonEnabled: true)
+        state.loginCallState.firingFunc = NetCallReducer.mockFire(with: nil, error: NSError(domain: "Server", code: 403), delayMillis: 10)
+        let store = TestStore(initialState: state) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+        store.exhaustivity = .off(showSkippedAssertions: true)
+
+        await store.send(.didTapLogin)
+
+        await store.receive(.loginCall(.delegate(.error(NSError(domain: "Server", code: 403))))) {
+            $0.loginCallState.isInProgress = false
+            $0.isLoginButtonEnabled = true
+            $0.alert = AlertState { TextState("Error: 403") } actions: {} message: {
+                TextState("Incorrect username or password")
+            }
+        }
+
+        await store.finish()
+    }
+
+    func testButtonDisablesWhileInProgress() async throws {
+        var state = LoginReducer.State(username: "elliot", password: "password", isLoginButtonEnabled: true)
+        state.loginCallState.firingFunc = NetCallReducer.mockFire(with: mockUser.data(using: .utf8), delayMillis: 10)
+        let store = TestStore(initialState: state) { LoginReducer() } withDependencies: {
+            $0.mainQueue = .immediate
+        }
+        store.exhaustivity = .off(showSkippedAssertions: true)
+
+        await store.send(.didTapLogin)
+
+        await store.receive(.loginCall(.fire)) {
+            $0.loginCallState.isInProgress = true
+            $0.isLoginButtonEnabled = false
+        }
+
+        // Confirm username/password are still set — disable came from `loginCallState.isInProgress`
+        XCTAssertEqual(store.state.username, "elliot")
+        XCTAssertEqual(store.state.password, "password")
+
         await store.finish()
     }
 

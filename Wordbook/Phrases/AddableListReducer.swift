@@ -19,29 +19,34 @@ struct AddableListReducer {
         var localFilter = ""
         var sortScheme: SortScheme = .recent
         var key: String
-        
+        // English is always the base language; this is the language being learned.
+        var targetLanguage: Language
+
         @Presents var new: EditPhraseReducer.State?
         @Presents var edit: EditPhraseReducer.State?
         @Presents var details: PhraseReducer.State?
-        
+
         var phraseToItemState: (Phrase) -> PhraseReducer.State
         var phraseToSearchableString: ((Phrase) -> String)?
-        
+
         static func == (lhs: AddableListReducer.State, rhs: AddableListReducer.State) -> Bool {
             return lhs.allPhrases == rhs.allPhrases
             && lhs.displayedPhrases == rhs.displayedPhrases
             && lhs.localFilter == rhs.localFilter
+            && lhs.targetLanguage == rhs.targetLanguage
             && lhs.details == rhs.details
             && lhs.new == rhs.new
             && lhs.edit == rhs.edit
         }
-        
+
         public init(data: [Phrase] = loadData(),
                     key: String = "phrases",
+                    targetLanguage: Language = .german,
                     phraseToItemState: @escaping (Phrase) -> PhraseReducer.State,
                     phraseToSearchableString: ((Phrase) -> String)?
         ) {
             self.key = key
+            self.targetLanguage = targetLanguage
             var phraseSet = Set<Phrase>()
             data.forEach { if !phraseSet.contains($0) { phraseSet.insert($0) } }
             self.allPhrases = IdentifiedArray(uniqueElements: Array(phraseSet).filter { !$0.id.isEmpty })
@@ -86,8 +91,8 @@ struct AddableListReducer {
             }
         Reduce { state, action in
             switch action {
-            case .addNewTapped: 
-                state.new = EditPhraseReducer.State()
+            case .addNewTapped:
+                state.new = EditPhraseReducer.State(targetLanguage: state.targetLanguage)
             case .saveNew:
                 let phrase = Phrase(id: state.new?.text ?? "", translation: state.new?.translation ?? "", createdAt: Date())
                 var data = state.allPhrases
@@ -123,7 +128,7 @@ struct AddableListReducer {
             case .didShowPhraseIndex(let index): break
             case let .editPhrase(id: id):
                 if let phrase = state.allPhrases.first(where: { $0.id == id }) {
-                    state.edit = EditPhraseReducer.State(phrase: phrase)
+                    state.edit = EditPhraseReducer.State(phrase: phrase, targetLanguage: state.targetLanguage)
                 }
             case .phrase(_, _): break
             case .binding(_): break

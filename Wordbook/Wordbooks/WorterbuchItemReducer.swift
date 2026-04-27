@@ -12,8 +12,10 @@ import ComposableArchitecture
 struct WorterbuchItemReducer {
     @ObservableState
     public struct State: Equatable, Identifiable {
-        var id = Current.uuid()
         var worterbuch: Worterbuch
+        // Derived from the wrapped wordbook so List taps in WorterbuchListView
+        // route through `state.allWorterbuchs[id:]` correctly.
+        public var id: UUID { worterbuch.id }
     }
     public enum Action: Equatable {
         case didTap

@@ -22,33 +22,41 @@ public struct EditPhraseReducer {
     public struct State: Equatable {
         @Presents var alert: AlertState<Action.Alert>?
         var recording: RecordingStatus?
-        
+
         var phrase: Phrase?
         var text: String = ""
         var translation: String = ""
+        // English is always the base; targetLanguage is what's being learned.
+        var targetLanguage: Language = .german
+        // Translates English (`translation` field) → target language.
         var englishTranslator: ((String) async throws -> TranslationSession.Response)?
         var englishSession: TranslationSession?
-        var germanTranslator: ((String) async throws -> TranslationSession.Response)?
-        var germanSession: TranslationSession?
+        // Translates target language (`text` field) → English.
+        var targetTranslator: ((String) async throws -> TranslationSession.Response)?
+        var targetSession: TranslationSession?
         var isAutoTranslationOn: Bool = true
         var isSaveDisabled: Bool = true
-        
-        init(phrase: Phrase? = nil) {
+
+        init(phrase: Phrase? = nil, targetLanguage: Language = .german) {
             self.phrase = phrase
+            self.targetLanguage = targetLanguage
             if let phrase {
                 self.text = phrase.id
                 self.translation = phrase.translation
             }
         }
-        
+
         public static func == (lhs: EditPhraseReducer.State, rhs: EditPhraseReducer.State) -> Bool {
             return lhs.alert == rhs.alert
             && lhs.recording == rhs.recording
             && lhs.phrase == rhs.phrase
             && lhs.text == rhs.text
             && lhs.translation == rhs.translation
-            && ((lhs.englishSession == nil && rhs.englishSession != nil) || (lhs.englishSession != nil && rhs.englishSession == nil))
-            && ((lhs.germanSession == nil && rhs.germanSession != nil) || (lhs.germanSession != nil && rhs.germanSession == nil))
+            && lhs.targetLanguage == rhs.targetLanguage
+            && lhs.isAutoTranslationOn == rhs.isAutoTranslationOn
+            && lhs.isSaveDisabled == rhs.isSaveDisabled
+            && (lhs.englishSession == nil) == (rhs.englishSession == nil)
+            && (lhs.targetSession == nil) == (rhs.targetSession == nil)
         }
     }
     
@@ -56,8 +64,8 @@ public struct EditPhraseReducer {
         case toggleRecordingPhrase
         case toggleRecordingTranslation
         case initializeEnglish(TranslationSession)
-        case initializeGerman(TranslationSession)
-        case germanTranslationResult(String)
+        case initializeTarget(TranslationSession)
+        case targetTranslationResult(String)
         case englishTranslationResult(String)
         case speechResult(String)
         case alert(PresentationAction<Alert>)
@@ -95,7 +103,7 @@ public struct EditPhraseReducer {
             }
             .onChange(of: \.text) { oldValue, newValue in
                 Reduce { state, action in
-                    if let translator = state.germanTranslator, state.isAutoTranslationOn {
+                    if let translator = state.targetTranslator, state.isAutoTranslationOn {
                         let text = state.text
                         return .run { send in
                             await onTextChanged(translator, text, send)
@@ -113,32 +121,32 @@ public struct EditPhraseReducer {
                     state.englishSession = session
                     state.englishTranslator = session.translate
                 }
-                
-            case let .initializeGerman(session):
+
+            case let .initializeTarget(session):
                 if state.text.isEmpty {
-                    state.germanSession = session
-                    state.germanTranslator = session.translate
+                    state.targetSession = session
+                    state.targetTranslator = session.translate
                 }
-                
+
             case .toggleRecordingPhrase:
-                SpeechClient.language = .german
+                SpeechClient.language = state.targetLanguage
                 state.recording = state.recording == nil ? .text : nil
-                
+
             case .toggleRecordingTranslation:
                 SpeechClient.language = .english
                 state.recording = state.recording == nil ? .translation : nil
-                
-            case let .germanTranslationResult(germanText):
-                state.text = germanText
-                
+
+            case let .targetTranslationResult(targetText):
+                state.text = targetText
+
             case let .englishTranslationResult(englishText):
                 state.translation = englishText
-                
+
             case .alert(.presented(.confirmDiscard)):
                 return .run { send in
                     await self.dismiss()
                 }
-                
+
             case .alert(.presented(.confirmSave)):
                 let text = state.text
                 let translation = state.translation
@@ -152,19 +160,19 @@ public struct EditPhraseReducer {
                     )
                     await self.dismiss()
                 }
-                
+
             case .alert(.dismiss):
                 return .none
-                
+
             case .delegate:
                 return .none
-                
+
             case let .speechResult(transcript):
                 if let status = state.recording {
                     switch status {
                     case .text:
                         state.text = transcript
-                        if let translator = state.germanTranslator {
+                        if let translator = state.targetTranslator {
                             let text = transcript
                             return .run { send in
                                 await onTextChanged(translator, text, send)
@@ -185,7 +193,7 @@ public struct EditPhraseReducer {
                     }
                 }
                 return .none
-                
+
             default: break
             }
             if state.recording != nil {
@@ -214,10 +222,10 @@ public struct EditPhraseReducer {
         if !translation.isEmpty {
             do {
                 let response = try await translator(translation)
-                await send(.germanTranslationResult(response.targetText))
+                await send(.targetTranslationResult(response.targetText))
             } catch {}
         } else {
-            await send(.germanTranslationResult(""))
+            await send(.targetTranslationResult(""))
         }
     }
     

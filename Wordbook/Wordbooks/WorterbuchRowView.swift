@@ -10,11 +10,17 @@ import ComposableArchitecture
 
 struct WorterbuchRowView: View {
     @Bindable var store: StoreOf<WorterbuchItemReducer>
-    
+
     var body: some View {
         WithPerceptionTracking {
             HStack {
-                Text(store.worterbuch.name ?? "").padding()
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(store.worterbuch.name)
+                    Text("English ↔ \(store.worterbuch.targetLanguage.displayName)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .padding()
                 Spacer()
             }
         }
@@ -22,5 +28,5 @@ struct WorterbuchRowView: View {
 }
 
 //#Preview {
-//    WorterbuchRowView(store: Store(initialState: WorterbuchItemReducer.State(worterbuch: Worterbuch()), reducer: { WorterbuchItemReducer() }))
+//    WorterbuchRowView(store: Store(initialState: WorterbuchItemReducer.State(worterbuch: Worterbuch(name: "Tiere", key: "k1")), reducer: { WorterbuchItemReducer() }))
 //}

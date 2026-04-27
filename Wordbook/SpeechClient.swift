@@ -10,9 +10,55 @@
 #endif
 import Dependencies
 
-enum Language: String {
+// All languages Apple's Translation framework currently pairs with English
+// for on-device translation. BCP-47 identifiers chosen so SFSpeechRecognizer
+// also accepts them (region-qualified locales).
+enum Language: String, Codable, CaseIterable, Equatable {
     case english = "en-US"
+    case arabic = "ar-SA"
+    case chineseSimplified = "zh-CN"
+    case chineseTraditional = "zh-TW"
+    case dutch = "nl-NL"
+    case french = "fr-FR"
     case german = "de-DE"
+    case hindi = "hi-IN"
+    case indonesian = "id-ID"
+    case italian = "it-IT"
+    case japanese = "ja-JP"
+    case korean = "ko-KR"
+    case polish = "pl-PL"
+    case portugueseBrazil = "pt-BR"
+    case russian = "ru-RU"
+    case spanish = "es-ES"
+    case thai = "th-TH"
+    case turkish = "tr-TR"
+    case ukrainian = "uk-UA"
+    case vietnamese = "vi-VN"
+
+    var displayName: String {
+        switch self {
+        case .english: return "English"
+        case .arabic: return "Arabic"
+        case .chineseSimplified: return "Chinese (Simplified)"
+        case .chineseTraditional: return "Chinese (Traditional)"
+        case .dutch: return "Dutch"
+        case .french: return "French"
+        case .german: return "German"
+        case .hindi: return "Hindi"
+        case .indonesian: return "Indonesian"
+        case .italian: return "Italian"
+        case .japanese: return "Japanese"
+        case .korean: return "Korean"
+        case .polish: return "Polish"
+        case .portugueseBrazil: return "Portuguese (Brazil)"
+        case .russian: return "Russian"
+        case .spanish: return "Spanish"
+        case .thai: return "Thai"
+        case .turkish: return "Turkish"
+        case .ukrainian: return "Ukrainian"
+        case .vietnamese: return "Vietnamese"
+        }
+    }
 }
 
 @available(iOS 15.0, *)

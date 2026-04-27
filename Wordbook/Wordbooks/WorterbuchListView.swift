@@ -12,7 +12,7 @@ struct WorterbuchListView: View {
     @Environment(\.scenePhase) var scenePhase
     let title: String
     @Bindable var store: StoreOf<WorterbuchListReducer>
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -23,7 +23,7 @@ struct WorterbuchListView: View {
                         }
                 }
             }
-            .navigationTitle("Worterbuchs")
+            .navigationTitle(title)
             .toolbar(content: {
                 HStack {
                     Spacer()
@@ -40,8 +40,20 @@ struct WorterbuchListView: View {
                                 addContent: EditPhraseView.init,
                                 editContent: EditPhraseView.init)
             }
-            .sheet(item: $store.scope(state: \.new, action: \.edit)) { store in
-                EditWorterbuchView(store: store)
+            .sheet(item: $store.scope(state: \.new, action: \.new)) { editStore in
+                NavigationStack {
+                    EditWorterbuchView(store: editStore)
+                        .navigationTitle("New wordbook")
+                        .toolbar {
+                            ToolbarItem {
+                                Button("Save") { store.send(.saveNew) }
+                                    .disabled(editStore.worterbuch.name.isEmpty)
+                            }
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") { store.send(.cancel) }
+                            }
+                        }
+                }
             }
         }
         .searchable(text: $store.localFilter)

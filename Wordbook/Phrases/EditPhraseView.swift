@@ -29,8 +29,8 @@ struct EditPhraseView: View {
                     .frame(width: imageHeight, height: imageHeight)
                     TextField("Phrase", text: $store.text).foregroundColor(.secondary)
                         .focused($focusState, equals: .text)
-                        .translationTask(TranslationSession.Configuration(source: .init(identifier: "de-DE"), target: .init(identifier: "en-US"))) { session in
-                            store.send(.initializeGerman(session))
+                        .translationTask(TranslationSession.Configuration(source: .init(identifier: store.targetLanguage.rawValue), target: .init(identifier: Language.english.rawValue))) { session in
+                            store.send(.initializeTarget(session))
                         }
                 }
             }
@@ -44,7 +44,7 @@ struct EditPhraseView: View {
                     .frame(width: imageHeight, height: imageHeight)
                     TextField("Translation", text: $store.translation).foregroundColor(.secondary)
                         .focused($focusState, equals: .translation)
-                        .translationTask(TranslationSession.Configuration(source: .init(identifier: "en-US"), target: .init(identifier: "de-DE"))) { session in
+                        .translationTask(TranslationSession.Configuration(source: .init(identifier: Language.english.rawValue), target: .init(identifier: store.targetLanguage.rawValue))) { session in
                             store.send(.initializeEnglish(session))
                         }
                 }

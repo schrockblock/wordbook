@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0938897B26A83B5459A375D9 /* AddPhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D1C1190CF184B310D50E4 /* AddPhraseTests.swift */; };
+		0DD6EEAB271151228AB1A593 /* PhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07618CE5EDDCB1D9D0694263 /* PhraseTests.swift */; };
+		14E62E89A826B966F6FF00C5 /* PhrasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172FA33873FD10753E9F14B /* PhrasesTests.swift */; };
+		2F75BF27B0CAF8738241F683 /* NetModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324E493ECBF60474443BF98 /* NetModelsTests.swift */; };
 		4932A1B12AE1BF370049760C /* EditPhraseReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */; };
 		4932A8542EC7AA8A00BF5902 /* WorterbuchListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A8512EC7AA8A00BF5902 /* WorterbuchListReducer.swift */; };
 		4932A8552EC7AA8A00BF5902 /* WorterbuchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932A8532EC7AA8A00BF5902 /* WorterbuchRowView.swift */; };
@@ -82,6 +86,22 @@
 		49D2AF4D2BA2248700027B19 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF4C2BA2248700027B19 /* Env.swift */; };
 		49D2AF4F2BA2258A00027B19 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 49D2AF4E2BA2258A00027B19 /* ComposableArchitecture */; };
 		49D2AF512BA2266500027B19 /* EditPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D2AF502BA2266500027B19 /* EditPhraseView.swift */; };
+		4B960D03374267FDFF40278C /* EditWorterbuchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2E674EF2DE766382C886E5 /* EditWorterbuchTests.swift */; };
+		6657A3FA0ACB5CCE73275284 /* AddableListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04012D5B2257BF531CB6E799 /* AddableListTests.swift */; };
+		688A7F6BB5CC0DD699F9DB4E /* PhrasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD08A1C712FD2E5F3C27BAE /* PhrasesTests.swift */; };
+		6EA8A13F36837A1906497D89 /* EditPhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F3A16A4A4324BAE74ED969 /* EditPhraseTests.swift */; };
+		710F2A5B246FBB329249D942 /* LandingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC215B0BF81A5D61C0A738EE /* LandingTests.swift */; };
+		8E2F52F413CA060E477D4A44 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1481959EF8CAE4CAB37BB85D /* LoginTests.swift */; };
+		8E45969B9376662C694BE9A4 /* ForgotPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8496B5ED048BAB8F5A102B5 /* ForgotPasswordTests.swift */; };
+		91F6D5014669193C0A5F00AF /* WorterbuchItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3B16267EDF7B56A3B6E84F /* WorterbuchItemTests.swift */; };
+		999E57BBB1447C8C9DBF9438 /* WorterbuchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67EBA400BF05612B7D6234 /* WorterbuchListTests.swift */; };
+		99D6E57F90634C69A91A72FF /* AddPhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25BB50DFFCB46CA8C719B31 /* AddPhraseTests.swift */; };
+		AABB11CC22DD33EE44FF5566 /* WorterbuchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566AABB11CC22DD33EE44FF /* WorterbuchTests.swift */; };
+		B1DB7BC28C721A22C90183D9 /* PhraseListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A2164935575FAD7BFD67D /* PhraseListTests.swift */; };
+		BE557151A78DB72CFFA73D41 /* ResetPasswordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42575ABC27D0CBB5034E05B /* ResetPasswordTests.swift */; };
+		C296239A3ACC168000079347 /* NetModelsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93AE545E4E86FF9036B1AF /* NetModelsReducer.swift */; };
+		DD64E52A075C2DD1B7D9F6CF /* SplashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ECFBB927C199D7F8CCE819 /* SplashTests.swift */; };
+		F3DD707B9A798083CA659179 /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83884E750D3E0FD7FDDD9C9 /* SignUpTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +213,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04012D5B2257BF531CB6E799 /* AddableListTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddableListTests.swift; sourceTree = "<group>"; };
+		07618CE5EDDCB1D9D0694263 /* PhraseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhraseTests.swift; sourceTree = "<group>"; };
+		0C2E674EF2DE766382C886E5 /* EditWorterbuchTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditWorterbuchTests.swift; sourceTree = "<group>"; };
+		1481959EF8CAE4CAB37BB85D /* LoginTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		3F6D1C1190CF184B310D50E4 /* AddPhraseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddPhraseTests.swift; sourceTree = "<group>"; };
+		4172FA33873FD10753E9F14B /* PhrasesTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhrasesTests.swift; sourceTree = "<group>"; };
 		490442612ABCC2B8009A54E7 /* SpeechClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechClient.swift; sourceTree = "<group>"; };
 		4932A1B02AE1BF370049760C /* EditPhraseReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseReducer.swift; sourceTree = "<group>"; };
 		4932A84B2EC7AA8A00BF5902 /* EditWorterbuchReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorterbuchReducer.swift; sourceTree = "<group>"; };
@@ -265,6 +291,20 @@
 		49D2AF4A2BA2235700027B19 /* PhraseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseDetailsView.swift; sourceTree = "<group>"; };
 		49D2AF4C2BA2248700027B19 /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		49D2AF502BA2266500027B19 /* EditPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseView.swift; sourceTree = "<group>"; };
+		5566AABB11CC22DD33EE44FF /* WorterbuchTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorterbuchTests.swift; sourceTree = "<group>"; };
+		6324E493ECBF60474443BF98 /* NetModelsTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetModelsTests.swift; sourceTree = "<group>"; };
+		6DD08A1C712FD2E5F3C27BAE /* PhrasesTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhrasesTests.swift; sourceTree = "<group>"; };
+		90F3A16A4A4324BAE74ED969 /* EditPhraseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EditPhraseTests.swift; sourceTree = "<group>"; };
+		9D67EBA400BF05612B7D6234 /* WorterbuchListTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorterbuchListTests.swift; sourceTree = "<group>"; };
+		A25BB50DFFCB46CA8C719B31 /* AddPhraseTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddPhraseTests.swift; sourceTree = "<group>"; };
+		A42575ABC27D0CBB5034E05B /* ResetPasswordTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResetPasswordTests.swift; sourceTree = "<group>"; };
+		B03A2164935575FAD7BFD67D /* PhraseListTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PhraseListTests.swift; sourceTree = "<group>"; };
+		CE3B16267EDF7B56A3B6E84F /* WorterbuchItemTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WorterbuchItemTests.swift; sourceTree = "<group>"; };
+		DC215B0BF81A5D61C0A738EE /* LandingTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingTests.swift; sourceTree = "<group>"; };
+		E8496B5ED048BAB8F5A102B5 /* ForgotPasswordTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ForgotPasswordTests.swift; sourceTree = "<group>"; };
+		E8ECFBB927C199D7F8CCE819 /* SplashTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplashTests.swift; sourceTree = "<group>"; };
+		EE93AE545E4E86FF9036B1AF /* NetModelsReducer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NetModelsReducer.swift; sourceTree = "<group>"; };
+		F83884E750D3E0FD7FDDD9C9 /* SignUpTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +454,7 @@
 				49D2AF462BA2233600027B19 /* PhraseReducer.swift */,
 				49D2AF4A2BA2235700027B19 /* PhraseDetailsView.swift */,
 				494367F32BAF7C4600FE4F5C /* User.swift */,
+				EE93AE545E4E86FF9036B1AF /* NetModelsReducer.swift */,
 			);
 			path = Wordbook;
 			sourceTree = "<group>";
@@ -430,6 +471,23 @@
 			isa = PBXGroup;
 			children = (
 				493937E42ABC93AA00412D55 /* WordbookTests.swift */,
+				1481959EF8CAE4CAB37BB85D /* LoginTests.swift */,
+				F83884E750D3E0FD7FDDD9C9 /* SignUpTests.swift */,
+				E8ECFBB927C199D7F8CCE819 /* SplashTests.swift */,
+				DC215B0BF81A5D61C0A738EE /* LandingTests.swift */,
+				E8496B5ED048BAB8F5A102B5 /* ForgotPasswordTests.swift */,
+				A42575ABC27D0CBB5034E05B /* ResetPasswordTests.swift */,
+				07618CE5EDDCB1D9D0694263 /* PhraseTests.swift */,
+				6DD08A1C712FD2E5F3C27BAE /* PhrasesTests.swift */,
+				A25BB50DFFCB46CA8C719B31 /* AddPhraseTests.swift */,
+				90F3A16A4A4324BAE74ED969 /* EditPhraseTests.swift */,
+				04012D5B2257BF531CB6E799 /* AddableListTests.swift */,
+				B03A2164935575FAD7BFD67D /* PhraseListTests.swift */,
+				6324E493ECBF60474443BF98 /* NetModelsTests.swift */,
+				9D67EBA400BF05612B7D6234 /* WorterbuchListTests.swift */,
+				CE3B16267EDF7B56A3B6E84F /* WorterbuchItemTests.swift */,
+				0C2E674EF2DE766382C886E5 /* EditWorterbuchTests.swift */,
+				5566AABB11CC22DD33EE44FF /* WorterbuchTests.swift */,
 			);
 			path = WordbookTests;
 			sourceTree = "<group>";
@@ -491,6 +549,8 @@
 			isa = PBXGroup;
 			children = (
 				4977ED352ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift */,
+				3F6D1C1190CF184B310D50E4 /* AddPhraseTests.swift */,
+				4172FA33873FD10753E9F14B /* PhrasesTests.swift */,
 			);
 			path = "WordbookAW Watch AppTests";
 			sourceTree = "<group>";
@@ -879,6 +939,7 @@
 				494367D22BAF650600FE4F5C /* ForgotPasswordView.swift in Sources */,
 				49D2AF4D2BA2248700027B19 /* Env.swift in Sources */,
 				494367DA2BAF650600FE4F5C /* SplashReducer.swift in Sources */,
+				C296239A3ACC168000079347 /* NetModelsReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,6 +948,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				493937E52ABC93AA00412D55 /* WordbookTests.swift in Sources */,
+				8E2F52F413CA060E477D4A44 /* LoginTests.swift in Sources */,
+				F3DD707B9A798083CA659179 /* SignUpTests.swift in Sources */,
+				DD64E52A075C2DD1B7D9F6CF /* SplashTests.swift in Sources */,
+				710F2A5B246FBB329249D942 /* LandingTests.swift in Sources */,
+				8E45969B9376662C694BE9A4 /* ForgotPasswordTests.swift in Sources */,
+				BE557151A78DB72CFFA73D41 /* ResetPasswordTests.swift in Sources */,
+				0DD6EEAB271151228AB1A593 /* PhraseTests.swift in Sources */,
+				688A7F6BB5CC0DD699F9DB4E /* PhrasesTests.swift in Sources */,
+				99D6E57F90634C69A91A72FF /* AddPhraseTests.swift in Sources */,
+				6EA8A13F36837A1906497D89 /* EditPhraseTests.swift in Sources */,
+				6657A3FA0ACB5CCE73275284 /* AddableListTests.swift in Sources */,
+				B1DB7BC28C721A22C90183D9 /* PhraseListTests.swift in Sources */,
+				2F75BF27B0CAF8738241F683 /* NetModelsTests.swift in Sources */,
+				999E57BBB1447C8C9DBF9438 /* WorterbuchListTests.swift in Sources */,
+				91F6D5014669193C0A5F00AF /* WorterbuchItemTests.swift in Sources */,
+				4B960D03374267FDFF40278C /* EditWorterbuchTests.swift in Sources */,
+				AABB11CC22DD33EE44FF5566 /* WorterbuchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,6 +1008,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4977ED362ABCEC560058C471 /* WordbookAW_Watch_AppTests.swift in Sources */,
+				0938897B26A83B5459A375D9 /* AddPhraseTests.swift in Sources */,
+				14E62E89A826B966F6FF00C5 /* PhrasesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1388,7 +1468,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordbookAW Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WordbookAW Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -1409,7 +1489,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordbookAW Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WordbookAW Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -1429,7 +1509,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "WordbookAW Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -1449,7 +1529,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				TEST_TARGET_NAME = "WordbookAW Watch App";
-				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
